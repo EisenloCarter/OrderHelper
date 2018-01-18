@@ -178,7 +178,7 @@
         <!--设置-->
         <scene sceneID="Jnw-9n-4Xc">
             <objects>
-                <tableViewController id="Dwe-eG-npp" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Dwe-eG-npp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="56" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PD3-Ps-h7f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +324,7 @@
         <!--登陆-->
         <scene sceneID="ofN-pL-A7L">
             <objects>
-                <tableViewController id="zVY-An-wzN" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="zVY-An-wzN" customClass="LoginViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="56" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c7H-oQ-Vjk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,7 +338,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="LoginButton:" destination="7Vc-aK-trS" eventType="touchUpInside" id="mcF-vn-bwC"/>
+                                <action selector="loginButton:" destination="zVY-An-wzN" eventType="touchUpInside" id="cfO-Ga-vUq"/>
                             </connections>
                         </button>
                         <sections>
@@ -351,10 +351,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIO-yN-OnW">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIO-yN-OnW">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fec-oy-WzY">
@@ -365,6 +365,9 @@
                                                     <state key="normal" title="获取验证码">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="getSafeNumButton:" destination="zVY-An-wzN" eventType="touchUpInside" id="eVd-5Y-YC5"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -382,11 +385,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OXR-Bh-qKB">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OXR-Bh-qKB">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="safeCode:" destination="7Vc-aK-trS" eventType="editingDidEnd" id="dcE-u8-UEz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -432,6 +438,10 @@
                     <navigationItem key="navigationItem" title="登陆" id="vCm-Cj-6yh">
                         <barButtonItem key="backBarButtonItem" title="返回" id="0C9-sn-10B"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="phoneNumTextField" destination="bIO-yN-OnW" id="roo-Xd-ryl"/>
+                        <outlet property="safeCodeTextField" destination="OXR-Bh-qKB" id="fAc-qJ-ReM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x0p-H8-wwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Vc-aK-trS" userLabel="Exit" sceneMemberID="exit"/>
@@ -441,7 +451,7 @@
         <!--Account View Controller-->
         <scene sceneID="Ekx-Zt-9Dw">
             <objects>
-                <viewController id="vSd-Bv-aet" customClass="AccountViewController" customModule="OrderHelper" sceneMemberID="viewController">
+                <viewController id="vSd-Bv-aet" customClass="AccountViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iJx-XT-eWw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

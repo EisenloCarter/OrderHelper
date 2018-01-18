@@ -8,15 +8,56 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UITableViewController {
+    
+    @IBOutlet weak var phoneNumTextField: UITextField!
+    
+    @IBOutlet weak var safeCodeTextField: UITextField!
+    
+    //判断是否是手机号
+    @IBAction func getSafeNumButton(_ sender: UIButton) {
+        let profile = LoginProfile()
+        if (profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
+            print("Phone number correct!")
+        }
+        else{
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "请您正确输入手机号码",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+                print("获取验证码：用户点击了确定")
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
 
-    @IBAction func LoginButton(_ sender: UIButton) {
-        LoginHelper.sharedInstance.setLoginStatus(status: true)
+    }
+    
+    //判断验证码是否与手机号匹配
+    @IBAction func loginButton(_ sender: UIButton) {
+        let profile = LoginProfile()
+        if (profile.isSafeNumb(safeN: safeCodeTextField.text!) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
+            print("All correct!")
+        }
+        else{
+            let alertController = UIAlertController(title: "系统提示",
+                                                message: "请您正确输入手机号码与验证码",
+                                                preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+                print("登录：用户点击了确定")
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
