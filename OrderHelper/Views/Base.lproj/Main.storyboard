@@ -54,7 +54,6 @@
                     <view key="view" contentMode="scaleToFill" id="3MB-Bd-iwf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="hBj-2j-PFK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="订单" image="Today Icon" id="LWj-ol-gmj"/>

@@ -52,11 +52,18 @@ class LoginViewController: UITableViewController {
         if ((safeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
             print("All correct!")
             
+            // MARK: 添加活动指示器
+            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            view.addSubview(activityIndicator)
+            activityIndicator.center = view.center
+            activityIndicator.startAnimating()
+            
             //LeanCode登录/注册
             LCUser.logIn(username: phoneNumTextField.text!, password: phoneNumTextField.text!) { result in
                 switch result {
                 case .success( _):
                     print("登录成功！")
+                    activityIndicator.removeFromSuperview()
                     self.navigationController?.popViewController(animated: true)
                     break
                 case .failure(let error):
@@ -66,6 +73,7 @@ class LoginViewController: UITableViewController {
                     //MARK: 登录后用户操作
                     newUser.signUp()
                     print("登录失败：",error)
+                    activityIndicator.removeFromSuperview()
                     
                     //MARK: 登录失败则不进行界面跳转（由于LeanCode问题，很容易登录超时失败）
                     let alertController = UIAlertController(title: "系统提示",
