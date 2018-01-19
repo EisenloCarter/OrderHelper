@@ -10,6 +10,12 @@ import UIKit
 
 class AccountViewController: UIViewController {
     
+    @IBOutlet weak var avatarImage: UIImageView!{
+        didSet{
+            avatarImage.roundImage()
+        }
+    }
+    
     @IBOutlet weak var loginLabel: UILabel!{
         didSet{
             if(LoginHelper.sharedInstance.isLogin()){

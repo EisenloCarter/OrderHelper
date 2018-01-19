@@ -177,7 +177,7 @@
         <!--设置-->
         <scene sceneID="Jnw-9n-4Xc">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="Dwe-eG-npp" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Dwe-eG-npp" customClass="SettingTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="56" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PD3-Ps-h7f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,6 +190,9 @@
                             <state key="normal" title="退出登录">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="logOutButton:" destination="Dwe-eG-npp" eventType="touchUpInside" id="e4m-xg-l2t"/>
+                            </connections>
                         </button>
                         <sections>
                             <tableViewSection headerTitle=" " id="WTN-sp-DLA">
@@ -315,6 +318,14 @@
                     <navigationItem key="navigationItem" title="设置" id="ZN7-b1-LVb">
                         <barButtonItem key="backBarButtonItem" title="返回" id="7Xx-MR-gLf"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="aboutCell" destination="17s-CQ-uKa" id="4mw-NX-JDH"/>
+                        <outlet property="avatarCell" destination="SGe-F0-bAt" id="QjZ-TW-Dcg"/>
+                        <outlet property="loginPasswordCell" destination="e6P-Yw-SiC" id="O8P-gb-462"/>
+                        <outlet property="payPasswordCell" destination="lYI-Nq-GZe" id="B6z-Fp-Ypr"/>
+                        <outlet property="phoneCell" destination="MgP-uP-1GJ" id="nYt-gU-KDT"/>
+                        <outlet property="userNameCell" destination="Slk-GL-7yP" id="3Vr-op-uFt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wz8-fu-PEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,6 +563,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="avatarImage" destination="v5t-Rz-6wS" id="Q7A-Nb-QNM"/>
                         <outlet property="loginLabel" destination="J1N-Wh-qAs" id="J2T-Pu-meI"/>
                     </connections>
                 </viewController>

@@ -56,6 +56,7 @@ class LoginViewController: UITableViewController {
             let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
             view.addSubview(activityIndicator)
             activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
             activityIndicator.startAnimating()
             
             //LeanCode登录/注册

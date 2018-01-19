@@ -16,6 +16,8 @@
 		0C6322FB200B824800915869 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FA200B824800915869 /* LoginHelper.swift */; };
 		0C6322FD200B828000915869 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FC200B828000915869 /* LoginProfile.swift */; };
 		0C632301200B844500915869 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C632300200B844500915869 /* AccountViewController.swift */; };
+		0C85F5D62012284400E679FE /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C85F5D52012284400E679FE /* SettingTableViewController.swift */; };
+		0C85F5E12012327300E679FE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C85F5E02012327300E679FE /* UIImageView+Extensions.swift */; };
 		0C94B46F1FFF9348003F2357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C94B46E1FFF9348003F2357 /* Assets.xcassets */; };
 		0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC6DD5201066390044BC1A /* LoginViewController.swift */; };
 		C25893C3B768D5B8CE40B7CF /* Pods_OrderHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A5C9507A41618FF89AFE4 /* Pods_OrderHelper.framework */; };
@@ -54,6 +56,8 @@
 		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = SOURCE_ROOT; };
 		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = SOURCE_ROOT; };
 		0C632300200B844500915869 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0C85F5D52012284400E679FE /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		0C85F5E02012327300E679FE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		0C94B46E1FFF9348003F2357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CCC6DD5201066390044BC1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		23F167674FAA7FF96CE868F9 /* Pods-OrderHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderHelper/Pods-OrderHelper.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +116,11 @@
 		0C29FC021FFE1281008E79B8 /* OrderHelper */ = {
 			isa = PBXGroup;
 			children = (
-				0CCA314D200A0BFE00029868 /* Login */,
+				0C85F5DF2012323200E679FE /* Extensions */,
+				0C85F5DE20122E1900E679FE /* HomePage */,
+				0C85F5DD20122E0C00E679FE /* Find */,
+				0C85F5DC20122DF200E679FE /* OrderList */,
+				0C85F5D920122BF700E679FE /* Account */,
 				0CA1980120070277008DB156 /* Views */,
 				0CA198002007023F008DB156 /* Supporting Files */,
 			);
@@ -135,6 +143,69 @@
 				0C29FC281FFE1282008E79B8 /* Info.plist */,
 			);
 			path = OrderHelperUITests;
+			sourceTree = "<group>";
+		};
+		0C85F5D720122BA300E679FE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				0C85F5D820122BC400E679FE /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		0C85F5D820122BC400E679FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C85F5D52012284400E679FE /* SettingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0C85F5D920122BF700E679FE /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				0C85F5DB20122D0400E679FE /* Controller */,
+				0CCA314D200A0BFE00029868 /* Login */,
+				0C85F5D720122BA300E679FE /* Setting */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		0C85F5DB20122D0400E679FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C632300200B844500915869 /* AccountViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0C85F5DC20122DF200E679FE /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OrderList;
+			sourceTree = "<group>";
+		};
+		0C85F5DD20122E0C00E679FE /* Find */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		0C85F5DE20122E1900E679FE /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		0C85F5DF2012323200E679FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0C85F5E02012327300E679FE /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0CA198002007023F008DB156 /* Supporting Files */ = {
@@ -160,7 +231,6 @@
 		0CA198032007029C008DB156 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0C632300200B844500915869 /* AccountViewController.swift */,
 				0CCC6DD5201066390044BC1A /* LoginViewController.swift */,
 			);
 			path = Controller;
@@ -394,11 +464,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C85F5D62012284400E679FE /* SettingTableViewController.swift in Sources */,
 				0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */,
 				0C6322FD200B828000915869 /* LoginProfile.swift in Sources */,
 				0C632301200B844500915869 /* AccountViewController.swift in Sources */,
 				0C6322FB200B824800915869 /* LoginHelper.swift in Sources */,
 				0C29FC041FFE1281008E79B8 /* AppDelegate.swift in Sources */,
+				0C85F5E12012327300E679FE /* UIImageView+Extensions.swift in Sources */,
 				0C29FC0C1FFE1281008E79B8 /* OrderHelper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
