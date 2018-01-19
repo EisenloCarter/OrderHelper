@@ -57,15 +57,31 @@ class LoginViewController: UITableViewController {
                 switch result {
                 case .success( _):
                     print("登录成功！")
+                    self.navigationController?.popViewController(animated: true)
                     break
                 case .failure(let error):
                     let newUser = LCUser()
                     newUser.username = LCString(self.phoneNumTextField.text!)
                     newUser.password = LCString(self.phoneNumTextField.text!)
-                    
-                    //TODO: 登录后用户操作
+                    //MARK: 登录后用户操作
                     newUser.signUp()
                     print("登录失败：",error)
+                    
+                    //MARK: 登录失败则不进行界面跳转（由于LeanCode问题，很容易登录超时失败）
+                    let alertController = UIAlertController(title: "系统提示",
+                                                            message: "请您重新登录",
+                                                            preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                        action in
+                        print("重新登录：用户点击了确定")
+                    })
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
+                        action in
+                        print("取消：用户点击了取消")
+                    })
+                    alertController.addAction(okAction)
+                    alertController.addAction(cancelAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
@@ -85,7 +101,6 @@ class LoginViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
     }
 
     override func didReceiveMemoryWarning() {
