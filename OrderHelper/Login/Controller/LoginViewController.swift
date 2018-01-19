@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 class LoginViewController: UITableViewController {
     //验证码
@@ -47,10 +48,26 @@ class LoginViewController: UITableViewController {
     
     //判断验证码是否与手机号匹配
     @IBAction func loginButton(_ sender: UIButton) {
-
         let profile = LoginProfile()
         if ((safeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
             print("All correct!")
+            
+            //LeanCode登录/注册
+            LCUser.logIn(username: phoneNumTextField.text!, password: phoneNumTextField.text!) { result in
+                switch result {
+                case .success( _):
+                    print("登录成功！")
+                    break
+                case .failure(let error):
+                    let newUser = LCUser()
+                    newUser.username = LCString(self.phoneNumTextField.text!)
+                    newUser.password = LCString(self.phoneNumTextField.text!)
+                    
+                    //TODO: 登录后用户操作
+                    newUser.signUp()
+                    print("登录失败：",error)
+                }
+            }
         }
         else{
             let alertController = UIAlertController(title: "系统提示",
@@ -63,7 +80,6 @@ class LoginViewController: UITableViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-
     }
     
     override func viewDidLoad() {

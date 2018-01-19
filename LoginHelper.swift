@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 // 登录状态的key
 private let LoginStatus = "LoginStatus"
@@ -30,4 +31,8 @@ class LoginHelper: NSObject {
         UserDefaults.standard.set(status, forKey: LoginStatus)
     }
     
+//    func isUser(phoneNumber : String) -> Bool {
+//        let query = LCQuery(className: "_User")
+//        print(query)
+//    }
 }

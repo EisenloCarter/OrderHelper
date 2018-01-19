@@ -24,11 +24,5 @@ class LoginProfile: NSObject {
         let pattern = "^1[34589]\\d{9}$"
         return NSPredicate.init(format: "SELF MATCHES %@", pattern).evaluate(with: phone)
     }
-    
-    /// 判断验证码
-    func isSafeNumb(safeN: String) -> Bool {
-        let pattern = "^\\d{4}$"
-        return NSPredicate.init(format: "SELF MATCHES %@", pattern).evaluate(with: safeN)
-    }
 }
 
