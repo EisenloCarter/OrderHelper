@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: UITableViewController {
+    //验证码
+    var safeNum = ""
     
     @IBOutlet weak var phoneNumTextField: UITextField!
     
@@ -19,6 +21,15 @@ class LoginViewController: UITableViewController {
         let profile = LoginProfile()
         if (profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
             print("Phone number correct!")
+            
+            //随机生成四位整数验证码
+            safeNum = ""
+            for _ in 0...3 {
+                let randomNum = "\(Int(arc4random() % 10))"
+                safeNum.append(randomNum)
+            }
+            print("safeNum:",safeNum)
+            safeCodeTextField.text = safeNum
         }
         else{
             let alertController = UIAlertController(title: "系统提示",
@@ -36,8 +47,9 @@ class LoginViewController: UITableViewController {
     
     //判断验证码是否与手机号匹配
     @IBAction func loginButton(_ sender: UIButton) {
+
         let profile = LoginProfile()
-        if (profile.isSafeNumb(safeN: safeCodeTextField.text!) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
+        if ((safeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
             print("All correct!")
         }
         else{
