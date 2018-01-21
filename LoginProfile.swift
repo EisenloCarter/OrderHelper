@@ -24,5 +24,14 @@ class LoginProfile: NSObject {
         let pattern = "^1[34589]\\d{9}$"
         return NSPredicate.init(format: "SELF MATCHES %@", pattern).evaluate(with: phone)
     }
+    
+    func generateSafeNum() -> String {
+        var safeNum = ""
+        for _ in 0...3 {
+            let randomNum = "\(Int(arc4random() % 10))"
+            safeNum.append(randomNum)
+        }
+        return safeNum
+    }
 }
 

@@ -89,23 +89,6 @@ class SettingTableViewController: UITableViewController{
                 break
             }
         }
-        
-//        indexPath.section = 0
-//        let alertController = UIAlertController(title: "系统提示",
-//                                                message: "1",
-//                                                preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
-//            action in
-//            print("2")
-//        })
-//        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
-//            action in
-//            print("3")
-//        })
-//        alertController.addAction(okAction)
-//        alertController.addAction(cancelAction)
-//        self.present(alertController, animated: true, completion: nil)
-        
         print("选中了第\(indexPath.row)个cell")
     }
     

@@ -1,30 +1,29 @@
 //
-//  ViewController.swift
+//  UserNameTableViewController.swift
 //  OrderHelper
 //
-//  Created by spidepa on 4/1/18.
+//  Created by spidepa on 21/1/18.
 //  Copyright © 2018年 spidepa. All rights reserved.
 //
 
 import UIKit
 import LeanCloud
 
-class LoginViewController: UITableViewController {
+class UserNameTableViewController: UITableViewController {
     //验证码
     var safeNum = ""
     
-    @IBOutlet weak var phoneNumTextField: UITextField!
-    @IBOutlet weak var safeCodeTextField: UITextField!
+    @IBOutlet weak var getNewPhoneNumberTextField: UITextField!
+    @IBOutlet weak var getNewSafeCodeTextField: UITextField!
     
-    //判断是否是手机号
-    @IBAction func getSafeNumButton(_ sender: UIButton) {
+    @IBAction func getNewSafeCodeButton(_ sender: UIButton) {
         let profile = LoginProfile()
-        if (profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
+        if (profile.isPhoneNumber(phone: getNewPhoneNumberTextField.text!)) {
             print("Phone number correct!")
             //随机生成四位整数验证码
-            safeCodeTextField.text = profile.generateSafeNum()
-            safeNum = safeCodeTextField.text!
-
+            getNewSafeCodeTextField.text = profile.generateSafeNum()
+            safeNum = getNewSafeCodeTextField.text!
+            
         }
         else{
             let alertController = UIAlertController(title: "系统提示",
@@ -39,10 +38,9 @@ class LoginViewController: UITableViewController {
         }
     }
     
-    //判断验证码是否与手机号匹配
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func confirmBondButton(_ sender: UIButton) {
         let profile = LoginProfile()
-        if ((safeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
+        if ((getNewSafeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: getNewPhoneNumberTextField.text!)) {
             print("All correct!")
             
             // MARK: 添加活动指示器
@@ -53,7 +51,7 @@ class LoginViewController: UITableViewController {
             activityIndicator.startAnimating()
             
             //LeanCode登录/注册
-            LCUser.logIn(username: phoneNumTextField.text!, password: phoneNumTextField.text!) { result in
+            LCUser.logIn(username: getNewPhoneNumberTextField.text!, password: getNewPhoneNumberTextField.text!) { result in
                 switch result {
                 case .success( _):
                     print("登录成功！")
@@ -62,20 +60,20 @@ class LoginViewController: UITableViewController {
                     break
                 case .failure(let error):
                     let newUser = LCUser()
-                    newUser.username = LCString(self.phoneNumTextField.text!)
-                    newUser.password = LCString(self.phoneNumTextField.text!)
+                    newUser.username = LCString(self.getNewPhoneNumberTextField.text!)
+                    newUser.password = LCString(self.getNewPhoneNumberTextField.text!)
                     //MARK: 登录后用户操作
                     newUser.signUp()
-                    print("登录失败：",error)
+                    print("绑定失败：",error)
                     activityIndicator.removeFromSuperview()
                     
                     //MARK: 登录失败则不进行界面跳转（由于LeanCode问题，很容易登录超时失败）
                     let alertController = UIAlertController(title: "系统提示",
-                                                            message: "请您重新登录",
+                                                            message: "请您重新绑定",
                                                             preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "好的", style: .default, handler: {
                         action in
-                        print("重新登录：用户点击了确定")
+                        print("重新绑定：用户点击了确定")
                     })
                     let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
                         action in
@@ -89,11 +87,11 @@ class LoginViewController: UITableViewController {
         }
         else{
             let alertController = UIAlertController(title: "系统提示",
-                                                message: "请您正确输入手机号码与验证码",
-                                                preferredStyle: .alert)
+                                                    message: "请您正确输入手机号码与验证码",
+                                                    preferredStyle: .alert)
             let okAction = UIAlertAction(title: "好的", style: .default, handler: {
                 action in
-                print("登录：用户点击了确定")
+                print("绑定：用户点击了绑定")
             })
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
@@ -102,7 +100,6 @@ class LoginViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +107,4 @@ class LoginViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
 }
-
