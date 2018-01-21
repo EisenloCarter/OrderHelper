@@ -197,15 +197,15 @@
                         <sections>
                             <tableViewSection headerTitle=" " id="WTN-sp-DLA">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="sO5-QG-hts" style="IBUITableViewCellStyleDefault" id="SGe-F0-bAt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="sO5-QG-hts" style="IBUITableViewCellStyleDefault" id="SGe-F0-bAt">
                                         <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SGe-F0-bAt" id="Txk-R6-4ob">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sO5-QG-hts">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -214,15 +214,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="TNa-T6-iYK" style="IBUITableViewCellStyleDefault" id="Slk-GL-7yP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="TNa-T6-iYK" style="IBUITableViewCellStyleDefault" id="Slk-GL-7yP">
                                         <rect key="frame" x="0.0" y="84" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Slk-GL-7yP" id="TP8-Pr-1HV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TNa-T6-iYK">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -231,15 +231,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="BcT-Mv-N4V" style="IBUITableViewCellStyleDefault" id="MgP-uP-1GJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BcT-Mv-N4V" style="IBUITableViewCellStyleDefault" id="MgP-uP-1GJ">
                                         <rect key="frame" x="0.0" y="140" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MgP-uP-1GJ" id="Ilh-YH-qhd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="绑定手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BcT-Mv-N4V">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -252,15 +252,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle=" " id="PJd-9h-Si0">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="UKO-NH-jf0" style="IBUITableViewCellStyleDefault" id="e6P-Yw-SiC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="UKO-NH-jf0" style="IBUITableViewCellStyleDefault" id="e6P-Yw-SiC">
                                         <rect key="frame" x="0.0" y="224" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6P-Yw-SiC" id="Dwf-xf-RlH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="登录密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKO-NH-jf0">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -269,15 +269,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Me7-iq-B8C" style="IBUITableViewCellStyleDefault" id="lYI-Nq-GZe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Me7-iq-B8C" style="IBUITableViewCellStyleDefault" id="lYI-Nq-GZe">
                                         <rect key="frame" x="0.0" y="280" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lYI-Nq-GZe" id="4OM-Ka-3M5">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="支付密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Me7-iq-B8C">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -290,15 +290,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle=" " footerTitle=" " id="Jkn-ml-I9l">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="pU8-u4-D51" style="IBUITableViewCellStyleDefault" id="17s-CQ-uKa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pU8-u4-D51" style="IBUITableViewCellStyleDefault" id="17s-CQ-uKa">
                                         <rect key="frame" x="0.0" y="364" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="17s-CQ-uKa" id="Flr-gh-qXB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="55.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="关于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pU8-u4-D51">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="55.666666666666664"/>
+                                                    <rect key="frame" x="20" y="0.0" width="356" height="55.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -318,14 +318,6 @@
                     <navigationItem key="navigationItem" title="设置" id="ZN7-b1-LVb">
                         <barButtonItem key="backBarButtonItem" title="返回" id="7Xx-MR-gLf"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="aboutCell" destination="17s-CQ-uKa" id="4mw-NX-JDH"/>
-                        <outlet property="avatarCell" destination="SGe-F0-bAt" id="QjZ-TW-Dcg"/>
-                        <outlet property="loginPasswordCell" destination="e6P-Yw-SiC" id="O8P-gb-462"/>
-                        <outlet property="payPasswordCell" destination="lYI-Nq-GZe" id="B6z-Fp-Ypr"/>
-                        <outlet property="phoneCell" destination="MgP-uP-1GJ" id="nYt-gU-KDT"/>
-                        <outlet property="userNameCell" destination="Slk-GL-7yP" id="3Vr-op-uFt"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wz8-fu-PEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
