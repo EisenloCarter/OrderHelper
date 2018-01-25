@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountTableViewController: UITableViewController {
     
     @IBOutlet weak var avatarImage: UIImageView!{
         didSet{
@@ -25,7 +25,8 @@ class AccountViewController: UIViewController {
                 loginLabel.isHidden = false
             }
         }
-    }    
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
