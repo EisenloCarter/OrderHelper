@@ -162,7 +162,6 @@
 		0C85F5D720122BA300E679FE /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				0C85F5DB20122D0400E679FE /* Controller */,
 				0C85F5D820122BC400E679FE /* Controller */,
 			);
 			path = Setting;
@@ -180,6 +179,7 @@
 		0C85F5D920122BF700E679FE /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				0C85F5DB20122D0400E679FE /* Controller */,
 				0C931913201B043A0038F17B /* History */,
 				0C931912201B04270038F17B /* Like */,
 				0C93190E201B038E0038F17B /* Address */,

@@ -29,6 +29,10 @@ class AccountTableViewController: UITableViewController {
 
     
     override func viewDidLoad() {
+        // MARK: 去除导航栏分割线
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
