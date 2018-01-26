@@ -771,7 +771,7 @@
         <!--收货地址-->
         <scene sceneID="GWn-9V-GjC">
             <objects>
-                <tableViewController id="GiL-Oj-WIL" sceneMemberID="viewController">
+                <tableViewController id="GiL-Oj-WIL" customClass="AddressTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fc3-mN-xae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -811,7 +811,7 @@
         <!--收藏-->
         <scene sceneID="R0n-uT-et9">
             <objects>
-                <tableViewController id="Wvp-xp-nuq" sceneMemberID="viewController">
+                <tableViewController id="Wvp-xp-nuq" customClass="LikeTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jfh-Iy-Jc3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -843,7 +843,7 @@
         <!--足迹-->
         <scene sceneID="hTu-pb-5zc">
             <objects>
-                <tableViewController id="wKg-f6-DV2" sceneMemberID="viewController">
+                <tableViewController id="wKg-f6-DV2" customClass="HistoryTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WEh-Rk-tzr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -875,7 +875,7 @@
         <!--新增地址-->
         <scene sceneID="Vx7-9n-0AZ">
             <objects>
-                <tableViewController id="bz1-Gv-EOs" sceneMemberID="viewController">
+                <tableViewController id="bz1-Gv-EOs" customClass="AddNewAddressTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eHG-2B-pUl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
