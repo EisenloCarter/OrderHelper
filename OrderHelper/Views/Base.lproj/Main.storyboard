@@ -8,24 +8,232 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--首页-->
-        <scene sceneID="iCv-eN-A9E">
+        <scene sceneID="HDB-LU-XGR">
             <objects>
-                <viewController id="aAm-MI-cFN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QaQ-GJ-R5Y">
+                <tableViewController id="c5l-JJ-yOY" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2sq-wY-Z9m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="bH0-ir-cKR"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="Home Icon" id="gj6-VA-5vc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PTW-rg-Q3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection id="Lco-QN-79K">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="W5l-iM-Lzh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W5l-iM-Lzh" id="pl4-V6-7Sm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="输入商品名、店铺名" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qc8-8k-hr6">
+                                                    <rect key="frame" x="0.0" y="12" width="414" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="c5l-JJ-yOY" id="jNC-Zr-tQ6"/>
+                                                    </connections>
+                                                </searchBar>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="qMq-XI-gfi">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMq-XI-gfi" id="IvW-od-Ehu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-f1-RmP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfy-i6-91E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="80"/>
+                                                            <state key="normal" title="美食"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nut-bZ-e1P">
+                                                            <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
+                                                            <state key="normal" title="午餐"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-KO-HnC">
+                                                            <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="80"/>
+                                                            <state key="normal" title="夜宵"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMC-aD-CiR">
+                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
+                                                            <state key="normal" title="果蔬"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Zeo-f1-RmP" secondAttribute="bottom" id="58e-Tf-gbw"/>
+                                                <constraint firstItem="Zeo-f1-RmP" firstAttribute="leading" secondItem="IvW-od-Ehu" secondAttribute="leading" id="NaC-V1-rMI"/>
+                                                <constraint firstItem="Zeo-f1-RmP" firstAttribute="top" secondItem="IvW-od-Ehu" secondAttribute="top" id="SlI-h4-qTv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zeo-f1-RmP" secondAttribute="trailing" id="VAB-dP-cv9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="hW6-sx-V0F">
+                                        <rect key="frame" x="0.0" y="160" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hW6-sx-V0F" id="Brr-Tt-M48">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-ol-i1L">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMk-8m-EoO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="80"/>
+                                                            <state key="normal" title="甜品饮品"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaS-mm-91R">
+                                                            <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
+                                                            <state key="normal" title="快餐汉堡"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-m1-kq8">
+                                                            <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="80"/>
+                                                            <state key="normal" title="麻辣烫"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0T-tz-6EH">
+                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
+                                                            <state key="normal" title="准时达"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="UuV-ol-i1L" secondAttribute="bottom" id="2NW-oo-0L5"/>
+                                                <constraint firstItem="UuV-ol-i1L" firstAttribute="top" secondItem="Brr-Tt-M48" secondAttribute="top" id="85m-PS-fGv"/>
+                                                <constraint firstItem="UuV-ol-i1L" firstAttribute="leading" secondItem="Brr-Tt-M48" secondAttribute="leading" id="ljI-Qa-Ut5"/>
+                                                <constraint firstAttribute="trailing" secondItem="UuV-ol-i1L" secondAttribute="trailing" id="xaB-Cf-Z94"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Hlf-DX-VAL">
+                                        <rect key="frame" x="0.0" y="240" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hlf-DX-VAL" id="S14-Tn-uo7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="preferential4" translatesAutoresizingMaskIntoConstraints="NO" id="kDY-FE-Pmf">
+                                                    <rect key="frame" x="20" y="11" width="374" height="98"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kDY-FE-Pmf" secondAttribute="bottom" id="1j8-6G-8bm"/>
+                                                <constraint firstItem="kDY-FE-Pmf" firstAttribute="top" secondItem="S14-Tn-uo7" secondAttribute="topMargin" id="Ckf-Aw-VHB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kDY-FE-Pmf" secondAttribute="trailing" id="kLY-JE-tPL"/>
+                                                <constraint firstItem="kDY-FE-Pmf" firstAttribute="leading" secondItem="S14-Tn-uo7" secondAttribute="leadingMargin" id="wHB-El-0WN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="GDE-S5-9BR">
+                                        <rect key="frame" x="0.0" y="360" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDE-S5-9BR" id="325-zw-mOS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F12-BZ-WPL">
+                                                    <rect key="frame" x="20" y="11" width="374" height="128"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lji-YY-olp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="183" height="128"/>
+                                                            <state key="normal" title="特价优惠"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-3D-9Dh">
+                                                            <rect key="frame" x="191" y="0.0" width="183" height="128"/>
+                                                            <state key="normal" title="火爆热卖"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="F12-BZ-WPL" secondAttribute="bottom" id="9ev-q9-wub"/>
+                                                <constraint firstItem="F12-BZ-WPL" firstAttribute="top" secondItem="325-zw-mOS" secondAttribute="topMargin" id="Wep-JZ-k5y"/>
+                                                <constraint firstItem="F12-BZ-WPL" firstAttribute="leading" secondItem="325-zw-mOS" secondAttribute="leadingMargin" id="aDU-mi-GB6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="F12-BZ-WPL" secondAttribute="trailing" id="oMi-2S-9fK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="fmF-Kc-rtN">
+                                        <rect key="frame" x="0.0" y="510" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fmF-Kc-rtN" id="iAg-3X-VDX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Tn2-kt-UUu">
+                                                    <rect key="frame" x="20" y="11" width="374" height="128"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-1U-jF9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="128"/>
+                                                            <state key="normal" title="新店新品"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XX-TC-Tbl">
+                                                            <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="128"/>
+                                                            <state key="normal" title="限时好礼"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-4n-Mbp">
+                                                            <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="128"/>
+                                                            <state key="normal" title="口碑老店"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Tn2-kt-UUu" secondAttribute="bottom" id="6gn-QB-dS0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Tn2-kt-UUu" secondAttribute="trailing" id="96q-JI-CFx"/>
+                                                <constraint firstItem="Tn2-kt-UUu" firstAttribute="top" secondItem="iAg-3X-VDX" secondAttribute="topMargin" id="SmQ-dW-Ysl"/>
+                                                <constraint firstItem="Tn2-kt-UUu" firstAttribute="leading" secondItem="iAg-3X-VDX" secondAttribute="leadingMargin" id="cVE-8W-mXp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="apF-U7-qNq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="dvF-nY-rLa">
+                                        <rect key="frame" x="0.0" y="660" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dvF-nY-rLa" id="9ja-mG-TlR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="c5l-JJ-yOY" id="c95-FN-ZQc"/>
+                            <outlet property="delegate" destination="c5l-JJ-yOY" id="4ut-l0-jTY"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="首页" image="Home Icon" id="f6w-XA-79k"/>
+                    <navigationItem key="navigationItem" id="xKN-5Q-fXX"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="ALx-7i-fxi" id="zhV-Rr-1do"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMC-cC-m14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ALx-7i-fxi">
+                    <connections>
+                        <outlet property="delegate" destination="c5l-JJ-yOY" id="KRP-Ce-hIW"/>
+                        <outlet property="searchBar" destination="qc8-8k-hr6" id="gDO-QX-qyO"/>
+                        <outlet property="searchContentsController" destination="c5l-JJ-yOY" id="2hS-YQ-mv2"/>
+                        <outlet property="searchResultsDataSource" destination="c5l-JJ-yOY" id="f2F-3M-NOt"/>
+                        <outlet property="searchResultsDelegate" destination="c5l-JJ-yOY" id="BVT-lQ-NQI"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="22" y="-1243"/>
+            <point key="canvasLocation" x="21.739130434782609" y="-1163.3152173913045"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1JI-6t-xx7">
@@ -37,7 +245,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aAm-MI-cFN" kind="relationship" relationship="viewControllers" id="i94-lx-VYE"/>
+                        <segue destination="c5l-JJ-yOY" kind="relationship" relationship="viewControllers" id="hbd-SN-qPN"/>
                         <segue destination="zcg-R4-cr6" kind="relationship" relationship="viewControllers" id="hfk-Yh-qYt"/>
                         <segue destination="QZD-Gi-3sH" kind="relationship" relationship="viewControllers" id="Aq9-JU-jRY"/>
                         <segue destination="dgZ-U0-cQl" kind="relationship" relationship="viewControllers" id="dwt-Bk-NeZ"/>
@@ -1207,5 +1415,6 @@
         <image name="icons8-place-marker-filled-30" width="30" height="30"/>
         <image name="icons8-settings-30" width="30" height="30"/>
         <image name="icons8-time-machine-filled-30" width="30" height="30"/>
+        <image name="preferential4" width="380" height="180"/>
     </resources>
 </document>
