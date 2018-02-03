@@ -36,6 +36,8 @@ class SearchTableViewController: UITableViewController {
         //默认显示searchbar
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
+        // Setup the Scope Bar
+        searchController.searchBar.scopeButtonTitles = ["全部", "距离最近", "好评优先", "配送最快"]
     }
     
     private var searchResultsController: SearchResultsViewController? {
