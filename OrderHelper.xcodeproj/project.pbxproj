@@ -16,6 +16,7 @@
 		0C6322FB200B824800915869 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FA200B824800915869 /* LoginHelper.swift */; };
 		0C6322FD200B828000915869 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FC200B828000915869 /* LoginProfile.swift */; };
 		0C632301200B844500915869 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C632300200B844500915869 /* AccountTableViewController.swift */; };
+		0C6C6EA8202578CC00D36F9E /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */; };
 		0C764CF92021688900546B20 /* SearchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C764CF82021688900546B20 /* SearchItems.swift */; };
 		0C764CFB2021AD2800546B20 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */; };
 		0C81EE17201756B400062F15 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C81EE16201756B400062F15 /* OrderTableViewController.swift */; };
@@ -65,6 +66,7 @@
 		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = SOURCE_ROOT; };
 		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = SOURCE_ROOT; };
 		0C632300200B844500915869 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		0C764CF82021688900546B20 /* SearchItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItems.swift; sourceTree = "<group>"; };
 		0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		0C81EE16201756B400062F15 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				0C764CF82021688900546B20 /* SearchItems.swift */,
 				0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */,
+				0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */,
 				0C93190D201B03390038F17B /* AddressTableViewController.swift in Sources */,
 				0C846934201725DC008DDF23 /* FindTableViewController.swift in Sources */,
+				0C6C6EA8202578CC00D36F9E /* SearchResultsViewController.swift in Sources */,
 				0C931917201B04730038F17B /* LikeTableViewController.swift in Sources */,
 				0C632301200B844500915869 /* AccountTableViewController.swift in Sources */,
 				0C6322FB200B824800915869 /* LoginHelper.swift in Sources */,
