@@ -20,7 +20,6 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lOB-a1-kwE">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.32773433689999998" green="0.77814100750000004" blue="0.43124011130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -233,8 +232,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Poz-1o-1IZ" kind="relationship" relationship="viewControllers" id="3u1-Qv-aOd"/>
-                        <segue destination="zcg-R4-cr6" kind="relationship" relationship="viewControllers" id="hfk-Yh-qYt"/>
-                        <segue destination="QZD-Gi-3sH" kind="relationship" relationship="viewControllers" id="Aq9-JU-jRY"/>
+                        <segue destination="Q0Q-16-1CX" kind="relationship" relationship="viewControllers" id="egv-1R-zeE"/>
+                        <segue destination="G5I-hV-ZyB" kind="relationship" relationship="viewControllers" id="77F-t7-TFf"/>
                         <segue destination="dgZ-U0-cQl" kind="relationship" relationship="viewControllers" id="dwt-Bk-NeZ"/>
                     </connections>
                 </tabBarController>
@@ -691,11 +690,32 @@
             <point key="canvasLocation" x="1328" y="1639"/>
         </scene>
         <!--发现-->
+        <scene sceneID="4PY-Uv-ir9">
+            <objects>
+                <navigationController id="Q0Q-16-1CX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="Icon" id="skG-9p-Ja6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="at5-j3-8kl">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zcg-R4-cr6" kind="relationship" relationship="rootViewController" id="Sf9-PO-FsN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8w3-tP-GcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="-413"/>
+        </scene>
+        <!--发现-->
         <scene sceneID="aN6-7r-3fw">
             <objects>
                 <tableViewController id="zcg-R4-cr6" customClass="FindTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="XEu-d3-Ism">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
@@ -716,6 +736,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="发现" image="Icon" id="JG5-T2-RUu"/>
+                    <navigationItem key="navigationItem" title="发现" id="zDZ-nW-YWK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMj-l0-dcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1421,11 +1442,32 @@
             <point key="canvasLocation" x="2093" y="821"/>
         </scene>
         <!--订单-->
+        <scene sceneID="AVb-EG-sRq">
+            <objects>
+                <navigationController id="G5I-hV-ZyB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="订单" image="Today Icon" id="lJm-TN-Dos"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="72Y-HP-FoS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QZD-Gi-3sH" kind="relationship" relationship="rootViewController" id="ZYP-Fo-sw5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5L-YW-IaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="258"/>
+        </scene>
+        <!--订单-->
         <scene sceneID="6Cz-O2-gft">
             <objects>
                 <tableViewController id="QZD-Gi-3sH" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" rowHeight="180" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sDt-eT-Tbw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
@@ -1445,6 +1487,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="订单" image="Today Icon" id="0wE-DU-A55"/>
+                    <navigationItem key="navigationItem" title="订单" id="a3E-ki-p5v"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Heh-Ce-w0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
