@@ -31,7 +31,6 @@ class SearchResultsViewController: UITableViewController {
         s.beginEditing()
         let highlightAttributes: [NSAttributedStringKey : Any] = [
             .foregroundColor : UIColor.blue,
-            .font : UIFont.boldSystemFont(ofSize: 17),
             ]
         s.addAttributes(highlightAttributes, range: range)
         s.endEditing()
@@ -44,12 +43,6 @@ class SearchResultsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +51,6 @@ class SearchResultsViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -69,9 +61,20 @@ class SearchResultsViewController: UITableViewController {
         return results.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120;
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultsCell", for: indexPath)
-        cell.textLabel?.attributedText = results[indexPath.row]
+        
+        let shopImage = cell.viewWithTag(1) as! UIImageView
+        shopImage.image = UIImage(named: "600x600.jpg")
+        
+        let shopNameLabel = cell.viewWithTag(2) as! UILabel
+        shopNameLabel.attributedText = results[indexPath.row]
+        
+        
         return cell
     } 
 }

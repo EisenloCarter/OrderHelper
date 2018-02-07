@@ -5,7 +5,7 @@
 //  Created by spidepa on 3/2/18.
 //  Copyright © 2018年 spidepa. All rights reserved.
 //
-
+//未使用
 import UIKit
 
 class SearchFooter: UIView {
