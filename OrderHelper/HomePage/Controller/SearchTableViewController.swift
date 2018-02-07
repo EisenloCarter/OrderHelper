@@ -8,42 +8,25 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
-    var candies = [Candy]()
-    
+class SearchTableViewController: UITableViewController {    
     
     private let items = [
-        "Jon Snow",
-        "Bran",
-        "Theon",
-        "Tarly",
-        "Tyrion",
-        "Tywin",
-        "Jaime",
-        "Cersei",
-        "Ned",
-        "Robb",
+        "杨国福麻辣烫",
+        "绝味鸭脖",
+        "肯德基",
+        "麦当劳",
+        "必胜客",
+        "星巴克",
+        "一粥七天",
+        "COCO都可",
+        "蔚甜品",
+        "美味餐厅",
+        "滋味烧烤",
+        "兰州拉面"
         ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        candies = [
-            Candy(category:"Chocolate", name:"Chocolate Bar"),
-            Candy(category:"Chocolate", name:"Chocolate Chip"),
-            Candy(category:"Chocolate", name:"Dark Chocolate"),
-            Candy(category:"Hard", name:"Lollipop"),
-            Candy(category:"Hard", name:"Candy Cane"),
-            Candy(category:"Hard", name:"Jaw Breaker"),
-            Candy(category:"Other", name:"Caramel"),
-            Candy(category:"Other", name:"Sour Chew"),
-            Candy(category:"Other", name:"Gummi Bear"),
-            Candy(category:"Other", name:"Candy Floss"),
-            Candy(category:"Chocolate", name:"Chocolate Coin"),
-            Candy(category:"Chocolate", name:"Chocolate Egg"),
-            Candy(category:"Other", name:"Jelly Beans"),
-            Candy(category:"Other", name:"Liquorice"),
-            Candy(category:"Hard", name:"Toffee Apple")]
         
         let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
         let searchController = UISearchController(searchResultsController: searchResultsController)
@@ -56,7 +39,7 @@ class SearchTableViewController: UITableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         // Setup the Scope Bar
-        searchController.searchBar.scopeButtonTitles = ["全部", "距离最近", "好评优先", "配送最快"]
+        searchController.searchBar.scopeButtonTitles = ["传统美食", "快餐便当", "小吃零食", "甜品饮品"]
     }
     
     private var searchResultsController: SearchResultsViewController? {

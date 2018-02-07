@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Candy {
+struct Shop {
     let category : String
     let name : String
+    let shopImage : String
+    let shopLogo : String
+    let deliveryTime : String
+    let minDeliveryPrice : String
+    let amount : String 
 }

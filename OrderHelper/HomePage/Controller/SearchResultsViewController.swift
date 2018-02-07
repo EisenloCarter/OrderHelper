@@ -10,6 +10,8 @@ import UIKit
 
 class SearchResultsViewController: UITableViewController {
     
+    var shop = [Shop]()
+    
     private var results = [NSAttributedString]() {
         didSet {
             tableView.reloadData()
@@ -43,6 +45,20 @@ class SearchResultsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shop = [
+            Shop(category:"快餐便当", name:"杨国福麻辣烫", shopImage: "1.jpg", shopLogo: "ygfLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"小吃零食", name:"绝味鸭脖", shopImage: "2.jpg", shopLogo: "jwybLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"快餐便当", name:"肯德基", shopImage: "3.jpg", shopLogo: "kdjLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"快餐便当", name:"麦当劳", shopImage: "4.jpg", shopLogo: "mdlLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"快餐便当", name:"必胜客", shopImage: "5.jpg", shopLogo: "bskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"甜品饮品", name:"星巴克", shopImage: "6.jpg", shopLogo: "xbkLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"传统美食", name:"一粥七天", shopImage: "7.jpg", shopLogo: "yzqtLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"甜品饮品", name:"COCO都可", shopImage: "8.jpg", shopLogo: "COCOLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"甜品饮品", name:"蔚甜品", shopImage: "9.jpg", shopLogo: "wtpLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"传统美食", name:"美味餐厅", shopImage: "10.jpg", shopLogo: "mwctLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"小吃零食", name:"滋味烧烤", shopImage: "9.jpg", shopLogo: "zwskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
+            Shop(category:"传统美食", name:"兰州拉面", shopImage: "10.jpg", shopLogo: "lzlmLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单")]
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,14 +83,33 @@ class SearchResultsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultsCell", for: indexPath)
+        var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "")
         
-        let shopImage = cell.viewWithTag(1) as! UIImageView
-        shopImage.image = UIImage(named: "600x600.jpg")
-        
-        let shopNameLabel = cell.viewWithTag(2) as! UILabel
-        shopNameLabel.attributedText = results[indexPath.row]
-        
-        
+        if shop.contains(where: { (snapShop) -> Bool in
+            tempShop = snapShop
+            return snapShop.name == results[indexPath.row].string
+        }){
+            let shopLogo = cell.viewWithTag(1) as! UIImageView
+            shopLogo.image = UIImage(named: tempShop.shopLogo)
+            
+            let shopNameLabel = cell.viewWithTag(2) as! UILabel
+            shopNameLabel.attributedText = results[indexPath.row]
+            
+            let amountLabel = cell.viewWithTag(5) as! UILabel
+            amountLabel.text = tempShop.amount
+            amountLabel.textColor = UIColor.gray
+            amountLabel.font = UIFont.systemFont(ofSize: 12)
+            
+            let minDeliveryPriceLabel = cell.viewWithTag(3) as! UILabel
+            minDeliveryPriceLabel.text = tempShop.minDeliveryPrice
+            minDeliveryPriceLabel.textColor = UIColor.gray
+            minDeliveryPriceLabel.font = UIFont.systemFont(ofSize: 12)
+            
+            let deliveryTimeLabel = cell.viewWithTag(4) as! UILabel
+            deliveryTimeLabel.text = tempShop.deliveryTime
+            deliveryTimeLabel.textColor = UIColor.gray
+            deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
+        }
         return cell
     } 
 }
