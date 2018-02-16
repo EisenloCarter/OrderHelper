@@ -111,6 +111,7 @@ class SearchResultsViewController: UITableViewController {
             deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
         }
         return cell
-    } 
+    }
+    
 }
 

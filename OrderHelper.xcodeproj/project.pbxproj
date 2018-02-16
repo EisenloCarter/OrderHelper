@@ -13,6 +13,7 @@
 		0C29FC111FFE1281008E79B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C29FC0F1FFE1281008E79B8 /* LaunchScreen.storyboard */; };
 		0C29FC1C1FFE1282008E79B8 /* OrderHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29FC1B1FFE1282008E79B8 /* OrderHelperTests.swift */; };
 		0C29FC271FFE1282008E79B8 /* OrderHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29FC261FFE1282008E79B8 /* OrderHelperUITests.swift */; };
+		0C3693C22032B36700EBAB54 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3693C12032B36700EBAB54 /* DetailTableViewController.swift */; };
 		0C6322FB200B824800915869 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FA200B824800915869 /* LoginHelper.swift */; };
 		0C6322FD200B828000915869 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FC200B828000915869 /* LoginProfile.swift */; };
 		0C632301200B844500915869 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C632300200B844500915869 /* AccountTableViewController.swift */; };
@@ -64,6 +65,7 @@
 		0C29FC221FFE1282008E79B8 /* OrderHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C29FC261FFE1282008E79B8 /* OrderHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHelperUITests.swift; sourceTree = "<group>"; };
 		0C29FC281FFE1282008E79B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C3693C12032B36700EBAB54 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = SOURCE_ROOT; };
 		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = SOURCE_ROOT; };
 		0C632300200B844500915869 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */,
 				0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */,
+				0C3693C12032B36700EBAB54 /* DetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				0CE204202025F8C800AB9E44 /* SearchFooter.swift in Sources */,
 				0C85F5E12012327300E679FE /* UIImageView+Extensions.swift in Sources */,
 				0C81EE17201756B400062F15 /* OrderTableViewController.swift in Sources */,
+				0C3693C22032B36700EBAB54 /* DetailTableViewController.swift in Sources */,
 				0C764CFB2021AD2800546B20 /* SearchTableViewController.swift in Sources */,
 				0C29FC0C1FFE1281008E79B8 /* OrderHelper.xcdatamodeld in Sources */,
 				0C931919201B04880038F17B /* HistoryTableViewController.swift in Sources */,

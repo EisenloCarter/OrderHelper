@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController {    
-    
+
     private let items = [
         "杨国福麻辣烫",
         "绝味鸭脖",
@@ -27,11 +27,14 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        let testCon = storyboard?.instantiateViewController(withIdentifier: "test")
+//        present(testCon!, animated: true, completion: nil)
         let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
+
         let searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchBar.placeholder = "请输入店铺名或商品名"
         searchController.searchBar.autocapitalizationType = .none
+
         //实时搜索
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
@@ -45,7 +48,7 @@ class SearchTableViewController: UITableViewController {
     private var searchResultsController: SearchResultsViewController? {
         return navigationItem.searchController?.searchResultsController as? SearchResultsViewController
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

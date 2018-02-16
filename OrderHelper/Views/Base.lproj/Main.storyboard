@@ -742,7 +742,7 @@
             </objects>
             <point key="canvasLocation" x="22" y="-413"/>
         </scene>
-        <!--Search Results View Controller-->
+        <!--Happy?-->
         <scene sceneID="x3U-iG-klv">
             <objects>
                 <tableViewController storyboardIdentifier="searchResults" id="1e1-gP-Gvd" customClass="SearchResultsViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
@@ -799,6 +799,9 @@
                                         <constraint firstItem="XN2-nj-9qs" firstAttribute="leading" secondItem="AtS-bz-xoO" secondAttribute="leadingMargin" id="swi-Hg-F0W"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VAx-1l-zWP" kind="show" id="kqd-4I-1XC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -806,10 +809,67 @@
                             <outlet property="delegate" destination="1e1-gP-Gvd" id="xNS-Pv-ZKm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Happy?" id="T8w-X9-GF9"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyT-2l-w8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.739130434782609" y="-1765.7608695652175"/>
+            <point key="canvasLocation" x="746" y="-1098"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="5Rq-85-vvs">
+            <objects>
+                <tableViewController id="SQR-tP-rxN" customClass="DetailTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oV8-K9-4rZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="A72-cz-lwG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" id="8zl-52-JCb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8zl-52-JCb" id="RXZ-TA-wEa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="SQR-tP-rxN" id="aki-td-g6U"/>
+                            <outlet property="delegate" destination="SQR-tP-rxN" id="UgJ-pU-IV9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="WSs-19-hr7">
+                        <barButtonItem key="backBarButtonItem" title=" " id="1L9-9R-Wgt"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="bfp-0Z-WM3">
+                            <connections>
+                                <action selector="fakeReturnButton:" destination="SQR-tP-rxN" id="GbQ-t9-hAP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28N-u0-dW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2339" y="-1098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ltt-1d-kZb">
+            <objects>
+                <navigationController id="VAx-1l-zWP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="zZa-FN-7bd">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SQR-tP-rxN" kind="relationship" relationship="rootViewController" id="wp9-fw-cg8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5y1-Lq-rJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="-1098"/>
         </scene>
         <!--我的-->
         <scene sceneID="1At-2g-gp0">
@@ -1175,7 +1235,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLY-kZ-RdM" id="MnY-h8-Bfr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="姓名" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DxY-3A-t5c">
@@ -1209,7 +1269,7 @@
                                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XVa-gb-sCg" id="icY-iT-Ww2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Le-H4r">
@@ -1243,7 +1303,7 @@
                                         <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jP6-sE-B46" id="74T-tq-gyg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="收货地址" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1b4-3U-1sx">
@@ -1277,7 +1337,7 @@
                                         <rect key="frame" x="0.0" y="132" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="znE-uG-oY5" id="iyt-QK-Zin">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="例：2栋215室" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4ni-En-lAO">
@@ -1507,6 +1567,7 @@
         <image name="Icon" width="26" height="26"/>
         <image name="Today Icon" width="18" height="22"/>
         <image name="appicon" width="120" height="120"/>
+        <image name="back" width="13" height="22"/>
         <image name="icons8-account-filled-25" width="25" height="25"/>
         <image name="icons8-chevron-right-filled-30" width="30" height="30"/>
         <image name="icons8-heart-outline-filled-30" width="30" height="30"/>
