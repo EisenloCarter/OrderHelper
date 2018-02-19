@@ -1,14 +1,14 @@
 //
-//  SearchFooter.swift
+//  ShopCartFooter.swift
 //  OrderHelper
 //
-//  Created by spidepa on 3/2/18.
+//  Created by spidepa on 19/2/18.
 //  Copyright © 2018年 spidepa. All rights reserved.
 //
-//未使用
+
 import UIKit
 
-class SearchFooter: UIView {
+class ShopCartFooter: UIView {
     
     let label: UILabel = UILabel()
     
@@ -23,21 +23,20 @@ class SearchFooter: UIView {
     }
     
     func configureView() {
-        backgroundColor = UIColor.candyGreen
+        backgroundColor = UIColor(red: 67.0/255.0, green: 205.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         alpha = 0.0
-        
         // Configure label
         label.textAlignment = .center
         label.textColor = UIColor.white
+        label.text = "leihou"
         addSubview(label)
     }
     
     override func draw(_ rect: CGRect) {
         label.frame = bounds
     }
-    
+
     //MARK: - Animation
-    
     fileprivate func hideFooter() {
         UIView.animate(withDuration: 0.7) {[unowned self] in
             self.alpha = 0.0
@@ -51,28 +50,10 @@ class SearchFooter: UIView {
     }
 }
 
-extension SearchFooter {
+extension ShopCartFooter {
     //MARK: - Public API
-    
     public func setNotFiltering() {
-        label.text = ""
-        hideFooter()
+        label.text = "nice"
+        showFooter()
     }
-    
-    public func setIsFilteringToShow(filteredItemCount: Int, of totalItemCount: Int) {
-        if (filteredItemCount == totalItemCount) {
-            setNotFiltering()
-        } else if (filteredItemCount == 0) {
-            label.text = "No items match your query"
-            showFooter()
-        } else {
-            label.text = "Filtering \(filteredItemCount) of \(totalItemCount)"
-            showFooter()
-        }
-    }
-    
-}
-
-extension UIColor {
-    static let candyGreen = UIColor(red: 67.0/255.0, green: 205.0/255.0, blue: 135.0/255.0, alpha: 1.0)
 }
