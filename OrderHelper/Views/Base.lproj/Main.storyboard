@@ -51,31 +51,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="80" id="qMq-XI-gfi">
-                                        <rect key="frame" x="0.0" y="80" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="100" id="qMq-XI-gfi">
+                                        <rect key="frame" x="0.0" y="80" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMq-XI-gfi" id="IvW-od-Ehu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-f1-RmP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zeo-f1-RmP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfy-i6-91E">
-                                                            <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="80"/>
-                                                            <state key="normal" title="美食"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfy-i6-91E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="100"/>
+                                                            <state key="normal" backgroundImage="food"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nut-bZ-e1P">
-                                                            <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
-                                                            <state key="normal" title="午餐"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nut-bZ-e1P">
+                                                            <rect key="frame" x="105.66666666666669" y="0.0" width="97.333333333333314" height="100"/>
+                                                            <state key="normal" backgroundImage="hotpot"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-KO-HnC">
-                                                            <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="80"/>
-                                                            <state key="normal" title="夜宵"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-KO-HnC">
+                                                            <rect key="frame" x="210.99999999999997" y="0.0" width="97.666666666666657" height="100"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                            <state key="normal" backgroundImage="snacks"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMC-aD-CiR">
-                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
-                                                            <state key="normal" title="果蔬"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMC-aD-CiR">
+                                                            <rect key="frame" x="316.66666666666669" y="0.0" width="97.333333333333314" height="100"/>
+                                                            <state key="normal" backgroundImage="fruits"/>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -88,31 +89,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="80" id="hW6-sx-V0F">
-                                        <rect key="frame" x="0.0" y="160" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="100" id="hW6-sx-V0F">
+                                        <rect key="frame" x="0.0" y="180" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hW6-sx-V0F" id="Brr-Tt-M48">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-ol-i1L">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UuV-ol-i1L">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMk-8m-EoO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="80"/>
-                                                            <state key="normal" title="甜品饮品"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMk-8m-EoO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="100"/>
+                                                            <state key="normal" backgroundImage="ice cream"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaS-mm-91R">
-                                                            <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
-                                                            <state key="normal" title="快餐汉堡"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaS-mm-91R">
+                                                            <rect key="frame" x="105.66666666666669" y="0.0" width="97.333333333333314" height="100"/>
+                                                            <state key="normal" backgroundImage="fastfood"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-m1-kq8">
-                                                            <rect key="frame" x="206.99999999999997" y="0.0" width="103.66666666666666" height="80"/>
-                                                            <state key="normal" title="麻辣烫"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNR-m1-kq8">
+                                                            <rect key="frame" x="210.99999999999997" y="0.0" width="97.666666666666657" height="100"/>
+                                                            <state key="normal" backgroundImage="BBQ-1"/>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0T-tz-6EH">
-                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="103.33333333333331" height="80"/>
-                                                            <state key="normal" title="准时达"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0T-tz-6EH">
+                                                            <rect key="frame" x="316.66666666666669" y="0.0" width="97.333333333333314" height="100"/>
+                                                            <state key="normal" backgroundImage="clock">
+                                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -126,7 +129,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell4" rowHeight="120" id="Hlf-DX-VAL">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="280" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hlf-DX-VAL" id="S14-Tn-uo7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -145,7 +148,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell5" rowHeight="150" id="GDE-S5-9BR">
-                                        <rect key="frame" x="0.0" y="360" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="400" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GDE-S5-9BR" id="325-zw-mOS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -174,7 +177,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell6" rowHeight="150" id="fmF-Kc-rtN">
-                                        <rect key="frame" x="0.0" y="510" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="550" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fmF-Kc-rtN" id="iAg-3X-VDX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -207,7 +210,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell7" rowHeight="50" id="7Db-ed-aHJ">
-                                        <rect key="frame" x="0.0" y="660" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="700" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Db-ed-aHJ" id="y6u-9e-5Zy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -1653,11 +1656,18 @@
     </scenes>
     <resources>
         <image name="600x600" width="600" height="600"/>
+        <image name="BBQ-1" width="308" height="307"/>
         <image name="Home Icon" width="25" height="24"/>
         <image name="Icon" width="26" height="26"/>
         <image name="Today Icon" width="18" height="22"/>
         <image name="appicon" width="120" height="120"/>
         <image name="back" width="13" height="22"/>
+        <image name="clock" width="265" height="265"/>
+        <image name="fastfood" width="309" height="307"/>
+        <image name="food" width="260" height="260"/>
+        <image name="fruits" width="285" height="285"/>
+        <image name="hotpot" width="260" height="242"/>
+        <image name="ice cream" width="293" height="293"/>
         <image name="icons8-account-filled-25" width="25" height="25"/>
         <image name="icons8-chevron-right-filled-30" width="30" height="30"/>
         <image name="icons8-heart-outline-filled-30" width="30" height="30"/>
@@ -1666,5 +1676,6 @@
         <image name="icons8-settings-30" width="30" height="30"/>
         <image name="icons8-time-machine-filled-30" width="30" height="30"/>
         <image name="preferential4" width="380" height="180"/>
+        <image name="snacks" width="261" height="262"/>
     </resources>
 </document>
