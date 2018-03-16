@@ -9,22 +9,24 @@
 import UIKit
 
 class FoodTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var foodImage: UIImageView!{
-        didSet{
-            foodImage.image = #imageLiteral(resourceName: "MalaTang")
-        }
-    }
-    @IBOutlet weak var foodName: UILabel!{
-        didSet{
-            foodName.text = "xixixi"
-        }
-    }
-    @IBOutlet weak var foodPrice: UILabel!{
-        didSet{
-            foodPrice.text = "0￥"
-        }
-    }
+    
+    var TheFood = FoodInfo()
+    
+    //    @IBOutlet weak var foodImage: UIImageView!{
+    //        didSet{
+    //            foodImage.image = UIImage(named: TheFood.image)
+    //        }
+    //    }
+//    @IBOutlet weak var foodName: UILabel!{
+//        didSet{
+//            foodName.text = TheFood.name
+//        }
+//    }
+//    @IBOutlet weak var foodPrice: UILabel!{
+//        didSet{
+//            foodPrice.text = TheFood.price
+//        }
+//    }
     @IBAction func minus(_ sender: UIButton) {
         var temp = Int(number.text!)!
         if temp > 1 {
@@ -42,11 +44,12 @@ class FoodTableViewCell: UITableViewCell {
         number.text = String(temp)
         number.textColor = UIColor.red
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
+

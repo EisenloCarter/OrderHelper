@@ -17,7 +17,7 @@
 		0C29FC271FFE1282008E79B8 /* OrderHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29FC261FFE1282008E79B8 /* OrderHelperUITests.swift */; };
 		0C3CC243205A092100BB1984 /* FoodInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CC242205A092100BB1984 /* FoodInfo.swift */; };
 		0C3CC245205A0AA300BB1984 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CC244205A0AA300BB1984 /* Food.swift */; };
-		0C5AE3F9205BB24400B356FF /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5AE3F8205BB24400B356FF /* FoodTableViewCell.swift */; };
+		0C5AE402205C048000B356FF /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5AE401205C048000B356FF /* FoodTableViewCell.swift */; };
 		0C6322FB200B824800915869 /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FA200B824800915869 /* LoginHelper.swift */; };
 		0C6322FD200B828000915869 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6322FC200B828000915869 /* LoginProfile.swift */; };
 		0C632301200B844500915869 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C632300200B844500915869 /* AccountTableViewController.swift */; };
@@ -73,7 +73,7 @@
 		0C29FC281FFE1282008E79B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3CC242205A092100BB1984 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 		0C3CC244205A0AA300BB1984 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		0C5AE3F8205BB24400B356FF /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodTableViewCell.swift; path = OrderHelper/HomePage/View/FoodTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		0C5AE401205C048000B356FF /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodTableViewCell.swift; path = OrderHelper/HomePage/View/FoodTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = SOURCE_ROOT; };
 		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = SOURCE_ROOT; };
 		0C632300200B844500915869 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
@@ -204,10 +204,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0C5AE3F7205BB20100B356FF /* View */ = {
+		0C5AE3FE205C042100B356FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0C5AE3F8205BB24400B356FF /* FoodTableViewCell.swift */,
+				0C5AE401205C048000B356FF /* FoodTableViewCell.swift */,
 			);
 			name = View;
 			path = "New Group";
@@ -272,7 +272,7 @@
 		0C85F5DE20122E1900E679FE /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				0C5AE3F7205BB20100B356FF /* View */,
+				0C5AE3FE205C042100B356FF /* View */,
 				0CE204212025FECD00AB9E44 /* Model */,
 				0C35BEC820204C0400357A41 /* Controller */,
 			);
@@ -607,7 +607,7 @@
 				0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */,
 				0C764CF92021688900546B20 /* SearchItems.swift in Sources */,
 				0C175DC6203E5D8D00D2A023 /* FindDetailViewController.swift in Sources */,
-				0C5AE3F9205BB24400B356FF /* FoodTableViewCell.swift in Sources */,
+				0C5AE402205C048000B356FF /* FoodTableViewCell.swift in Sources */,
 				0C3CC245205A0AA300BB1984 /* Food.swift in Sources */,
 				0C6322FD200B828000915869 /* LoginProfile.swift in Sources */,
 				0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */,
