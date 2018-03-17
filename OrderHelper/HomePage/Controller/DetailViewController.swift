@@ -11,17 +11,17 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var foodsTableView: UITableView!
-    
     @IBOutlet weak var cartFooter: UIView!
     @IBAction func fakeReturnButton(_ sender: UIBarButtonItem) {
         self.presentingViewController!.dismiss(animated: true, completion: nil)
     }
     
+    var tmpShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var food = Food()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(tmpShop.name)
         //初始化模拟数据
         onCreateData()
     }
@@ -51,28 +51,25 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tmpShop.foodNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "foodDetailCell", for: indexPath)
-        //TODO: - NEED TO FIX!!!
-        let zxc = food.foodList.filter { (asd) -> Bool in
-            asd.shopName == "肯德基"
+        //展示所选店铺的餐品
+        let TheOne = food.foodList.filter { (tmp) -> Bool in
+            tmp.shopName == tmpShop.name
         }
-        for z in zxc {
-            let rewfdsagas = FoodTableViewCell()
-            rewfdsagas.TheFood = z
-            
-            let tempFoodImage = cell.viewWithTag(1) as! UIImageView
-            tempFoodImage.image = UIImage(named: z.image)
-            
-            let tempFoodName = cell.viewWithTag(2) as! UILabel
-            tempFoodName.text = z.name
-            
-            let tempFoodPrice = cell.viewWithTag(3) as! UILabel
-            tempFoodPrice.text = z.price
-        }
+        
+        let tempFoodImage = cell.viewWithTag(1) as! UIImageView
+        tempFoodImage.image = UIImage(named: TheOne[indexPath.row].image)
+        
+        let tempFoodName = cell.viewWithTag(2) as! UILabel
+        tempFoodName.text = TheOne[indexPath.row].name
+        
+        let tempFoodPrice = cell.viewWithTag(3) as! UILabel
+        tempFoodPrice.text = TheOne[indexPath.row].price
+
         return cell
     }
     

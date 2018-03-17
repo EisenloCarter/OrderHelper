@@ -886,7 +886,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VAx-1l-zWP" kind="show" id="kqd-4I-1XC"/>
+                                    <segue destination="VAx-1l-zWP" kind="show" identifier="SRtoDVC" id="kqd-4I-1XC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1117,7 +1117,7 @@
                         <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="MIO-vM-hfv" kind="relationship" relationship="rootViewController" id="lAd-fk-ghm"/>
+                        <segue destination="MIO-vM-hfv" kind="relationship" relationship="rootViewController" id="3g9-R7-vTK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5y1-Lq-rJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>

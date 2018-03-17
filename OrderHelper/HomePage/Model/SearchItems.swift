@@ -15,5 +15,6 @@ struct Shop {
     let shopLogo : String
     let deliveryTime : String
     let minDeliveryPrice : String
-    let amount : String 
+    let amount : String
+    let foodNumber : Int
 }

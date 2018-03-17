@@ -47,18 +47,18 @@ class SearchResultsViewController: UITableViewController {
         super.viewDidLoad()
         
         shop = [
-            Shop(category:"快餐便当", name:"杨国福麻辣烫", shopImage: "1.jpg", shopLogo: "ygfLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"小吃零食", name:"绝味鸭脖", shopImage: "2.jpg", shopLogo: "jwybLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"快餐便当", name:"肯德基", shopImage: "3.jpg", shopLogo: "kdjLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"快餐便当", name:"麦当劳", shopImage: "4.jpg", shopLogo: "mdlLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"快餐便当", name:"必胜客", shopImage: "5.jpg", shopLogo: "bskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"甜品饮品", name:"星巴克", shopImage: "6.jpg", shopLogo: "xbkLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"传统美食", name:"一粥七天", shopImage: "7.jpg", shopLogo: "yzqtLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"甜品饮品", name:"COCO都可", shopImage: "8.jpg", shopLogo: "COCOLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"甜品饮品", name:"蔚甜品", shopImage: "9.jpg", shopLogo: "wtpLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"传统美食", name:"美味餐厅", shopImage: "10.jpg", shopLogo: "mwctLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"小吃零食", name:"滋味烧烤", shopImage: "9.jpg", shopLogo: "zwskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单"),
-            Shop(category:"传统美食", name:"兰州拉面", shopImage: "10.jpg", shopLogo: "lzlmLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单")]
+            Shop(category:"快餐便当", name:"杨国福麻辣烫", shopImage: "1.jpg", shopLogo: "ygfLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"小吃零食", name:"绝味鸭脖", shopImage: "2.jpg", shopLogo: "jwybLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"快餐便当", name:"肯德基", shopImage: "3.jpg", shopLogo: "kdjLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 4),
+            Shop(category:"快餐便当", name:"麦当劳", shopImage: "4.jpg", shopLogo: "mdlLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 2),
+            Shop(category:"快餐便当", name:"必胜客", shopImage: "5.jpg", shopLogo: "bskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 2),
+            Shop(category:"甜品饮品", name:"星巴克", shopImage: "6.jpg", shopLogo: "xbkLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 2),
+            Shop(category:"传统美食", name:"一粥七天", shopImage: "7.jpg", shopLogo: "yzqtLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"甜品饮品", name:"COCO都可", shopImage: "8.jpg", shopLogo: "COCOLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"甜品饮品", name:"蔚甜品", shopImage: "9.jpg", shopLogo: "wtpLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"传统美食", name:"美味餐厅", shopImage: "10.jpg", shopLogo: "mwctLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"小吃零食", name:"滋味烧烤", shopImage: "9.jpg", shopLogo: "zwskLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1),
+            Shop(category:"传统美食", name:"兰州拉面", shopImage: "10.jpg", shopLogo: "lzlmLogo.jpg", deliveryTime: "30 mins", minDeliveryPrice: "¥20", amount: "月售10单", foodNumber: 1)]
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,7 +83,7 @@ class SearchResultsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultsCell", for: indexPath)
-        var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "")
+        var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
         
         if shop.contains(where: { (snapShop) -> Bool in
             tempShop = snapShop
@@ -110,7 +110,18 @@ class SearchResultsViewController: UITableViewController {
             deliveryTimeLabel.textColor = UIColor.gray
             deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
         }
+        
         return cell
+    }
+    
+    //传递参数
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SRtoDVC"{
+            if let nav = segue.destination as? UINavigationController,
+                let controller = nav.topViewController as? DetailViewController {
+                controller.tmpShop = shop[(tableView.indexPathForSelectedRow?.section)!]
+            }
+        }
     }
     
 }

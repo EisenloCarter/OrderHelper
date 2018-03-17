@@ -58,10 +58,10 @@ class SettingTableViewController: UITableViewController{
                 print("点击头像cell")
             //用户名
             case 1:
-                print("11111")
+                print("点击用户名11111")
             //绑定手机
             case 2:
-                print("22222")
+                print("点击绑定手机22222")
             default:
                 break
             }
@@ -71,25 +71,14 @@ class SettingTableViewController: UITableViewController{
             switch indexPath.row {
             //登录密码
             case 0:
-                print("33333")
+                print("点击登录密码33333")
             //支付密码
             case 1:
-                print("44444")
+                print("点击支付密码44444")
             default:
                 break
             }
         }
-        
-        else if (indexPath.section == 2) {
-            switch indexPath.row {
-            //关于
-            case 0:
-                print("55555")
-            default:
-                break
-            }
-        }
-        print("选中了第\(indexPath.row)个cell")
     }
     
     override func viewDidLoad() {

@@ -74,8 +74,8 @@
 		0C3CC242205A092100BB1984 /* FoodInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfo.swift; sourceTree = "<group>"; };
 		0C3CC244205A0AA300BB1984 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		0C5AE401205C048000B356FF /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodTableViewCell.swift; path = OrderHelper/HomePage/View/FoodTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = SOURCE_ROOT; };
-		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = SOURCE_ROOT; };
+		0C6322FA200B824800915869 /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginHelper.swift; path = "OrderHelper/Account/Login/New Group/LoginHelper.swift"; sourceTree = SOURCE_ROOT; };
+		0C6322FC200B828000915869 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginProfile.swift; path = "OrderHelper/Account/Login/New Group/LoginProfile.swift"; sourceTree = SOURCE_ROOT; };
 		0C632300200B844500915869 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		0C6C138F203ACD2800071E3E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +192,16 @@
 				0C29FC281FFE1282008E79B8 /* Info.plist */,
 			);
 			path = OrderHelperUITests;
+			sourceTree = "<group>";
+		};
+		0C2ACCDD205CB72E00995EE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C6322FA200B824800915869 /* LoginHelper.swift */,
+				0C6322FC200B828000915869 /* LoginProfile.swift */,
+			);
+			name = Model;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		0C35BEC820204C0400357A41 /* Controller */ = {
@@ -364,20 +374,11 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0CA19804200702AE008DB156 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0C6322FA200B824800915869 /* LoginHelper.swift */,
-				0C6322FC200B828000915869 /* LoginProfile.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0CCA314D200A0BFE00029868 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0C2ACCDD205CB72E00995EE7 /* Model */,
 				0CA198032007029C008DB156 /* Controller */,
-				0CA19804200702AE008DB156 /* Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
