@@ -11,6 +11,7 @@ import UIKit
 class SearchResultsViewController: UITableViewController {
     
     var shop = [Shop]()
+    var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     
     private var results = [NSAttributedString]() {
         didSet {
@@ -83,7 +84,6 @@ class SearchResultsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultsCell", for: indexPath)
-        var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
         
         if shop.contains(where: { (snapShop) -> Bool in
             tempShop = snapShop
@@ -109,6 +109,7 @@ class SearchResultsViewController: UITableViewController {
             deliveryTimeLabel.text = tempShop.deliveryTime
             deliveryTimeLabel.textColor = UIColor.gray
             deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
+            
         }
         
         return cell
@@ -119,7 +120,7 @@ class SearchResultsViewController: UITableViewController {
         if segue.identifier == "SRtoDVC"{
             if let nav = segue.destination as? UINavigationController,
                 let controller = nav.topViewController as? DetailViewController {
-                controller.tmpShop = shop[(tableView.indexPathForSelectedRow?.section)!]
+                controller.tmpShop = tempShop
             }
         }
     }
