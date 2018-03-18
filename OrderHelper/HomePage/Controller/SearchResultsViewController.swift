@@ -109,9 +109,7 @@ class SearchResultsViewController: UITableViewController {
             deliveryTimeLabel.text = tempShop.deliveryTime
             deliveryTimeLabel.textColor = UIColor.gray
             deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
-            
         }
-        
         return cell
     }
     

@@ -8,25 +8,12 @@
 
 import UIKit
 
-class FoodTableViewCell: UITableViewCell {
+typealias jump = (String) ->()
+
+class FoodTableViewCell: UITableViewCell{
     
-    var TheFood = FoodInfo()
+    var jumpClick: jump?
     
-    //    @IBOutlet weak var foodImage: UIImageView!{
-    //        didSet{
-    //            foodImage.image = UIImage(named: TheFood.image)
-    //        }
-    //    }
-//    @IBOutlet weak var foodName: UILabel!{
-//        didSet{
-//            foodName.text = TheFood.name
-//        }
-//    }
-//    @IBOutlet weak var foodPrice: UILabel!{
-//        didSet{
-//            foodPrice.text = TheFood.price
-//        }
-//    }
     @IBAction func minus(_ sender: UIButton) {
         var temp = Int(number.text!)!
         if temp > 1 {
@@ -37,19 +24,22 @@ class FoodTableViewCell: UITableViewCell {
             number.text = "0"
             number.textColor = UIColor.black
         }
+        jumpClick!(number.text!)
     }
+    
     @IBOutlet weak var number: UILabel!
     @IBAction func plus(_ sender: UIButton) {
         let temp = Int(number.text!)! + 1
         number.text = String(temp)
         number.textColor = UIColor.red
+        jumpClick!(number.text!)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
-    
+
 }
+
 

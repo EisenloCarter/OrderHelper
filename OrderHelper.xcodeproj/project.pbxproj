@@ -35,6 +35,7 @@
 		0C931919201B04880038F17B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C931918201B04880038F17B /* HistoryTableViewController.swift */; };
 		0C94B46F1FFF9348003F2357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C94B46E1FFF9348003F2357 /* Assets.xcassets */; };
 		0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC6DD5201066390044BC1A /* LoginViewController.swift */; };
+		0CEE7BB5205D44D900315057 /* CheckOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */; };
 		0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */; };
 		C25893C3B768D5B8CE40B7CF /* Pods_OrderHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A5C9507A41618FF89AFE4 /* Pods_OrderHelper.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		0C931918201B04880038F17B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		0C94B46E1FFF9348003F2357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CCC6DD5201066390044BC1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOrderTableViewController.swift; sourceTree = "<group>"; };
 		0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTableViewController.swift; sourceTree = "<group>"; };
 		23F167674FAA7FF96CE868F9 /* Pods-OrderHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderHelper/Pods-OrderHelper.release.xcconfig"; sourceTree = "<group>"; };
 		775B1253FA70F69B88D06F8E /* Pods-OrderHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderHelper/Pods-OrderHelper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				0C5AE401205C048000B356FF /* FoodTableViewCell.swift */,
+				0CE204212025FECD00AB9E44 /* Model */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */,
 				0C6C138F203ACD2800071E3E /* DetailViewController.swift */,
 				0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */,
+				0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				0C2ACCE1205CFA8600995EE7 /* View */,
-				0CE204212025FECD00AB9E44 /* Model */,
 				0C35BEC820204C0400357A41 /* Controller */,
 			);
 			path = HomePage;
@@ -609,6 +612,7 @@
 				0C5AE402205C048000B356FF /* FoodTableViewCell.swift in Sources */,
 				0C3CC245205A0AA300BB1984 /* Food.swift in Sources */,
 				0C6322FD200B828000915869 /* LoginProfile.swift in Sources */,
+				0CEE7BB5205D44D900315057 /* CheckOrderTableViewController.swift in Sources */,
 				0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */,
 				0C93190D201B03390038F17B /* AddressTableViewController.swift in Sources */,
 				0C846934201725DC008DDF23 /* FindTableViewController.swift in Sources */,

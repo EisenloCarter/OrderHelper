@@ -27,8 +27,6 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let testCon = storyboard?.instantiateViewController(withIdentifier: "test")
-//        present(testCon!, animated: true, completion: nil)
         let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
 
         let searchController = UISearchController(searchResultsController: searchResultsController)
