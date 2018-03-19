@@ -11,13 +11,16 @@ import UIKit
 class AddressTableViewController: UITableViewController {
 
     var address = Address()
+
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        address.loadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.tableFooterView = UIView(frame:CGRect.zero)
-        address.loadData()
-        print("???:",address.addressList.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,66 +30,59 @@ class AddressTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        address.loadData()
+        print("就是他：",address.addressList.count == 0 ? 1 : address.addressList.count)
         return address.addressList.count == 0 ? 1 : address.addressList.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
-
+        
+        let lbAddress = cell.viewWithTag(1) as! UILabel
+        let lbName = cell.viewWithTag(2) as! UILabel
+        print(address.addressList.isEmpty)
+        if !address.addressList.isEmpty {
+            lbAddress.text = address.addressList[indexPath.row].address + " " + address.addressList[indexPath.row].door
+            lbAddress.font=UIFont.boldSystemFont(ofSize: 25)
+            
+            lbName.text = address.addressList[indexPath.row].name + " " + address.addressList[indexPath.row].phone
+            lbName.font=UIFont.systemFont(ofSize: 15)
+            lbName.textColor = UIColor.gray
+        }
+        else{
+            lbAddress.text = ""
+            
+            lbName.text = ""
+        }
         return cell
     }
- 
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
+    // MARK: - empty address cell cause crash!!!MUST FIX!!!
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            address.loadData()
+            address.addressList.remove(at: indexPath.row)
+            address.saveData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        self.tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

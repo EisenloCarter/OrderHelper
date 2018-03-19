@@ -21,6 +21,8 @@ class AddNewAddressTableViewController: UITableViewController {
     @IBAction func btnDone(_ sender: UIBarButtonItem) {
         if txfName.hasText && txfPhone.hasText && txfAddress.hasText && txfDoor.hasText{
             if logPro.isPhoneNumber(phone: txfPhone.text ?? ""){
+                
+                address.loadData()
                 address.addressList.append(AddressInfo(name: txfName.text ?? emp,phone: txfPhone.text ?? emp , address: txfAddress.text ?? emp , door: txfDoor.text ?? emp))
                 address.saveData()
                 
