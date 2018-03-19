@@ -9,15 +9,58 @@
 import UIKit
 
 class AddNewAddressTableViewController: UITableViewController {
-
+    
+    var address = Address()
+    let logPro = LoginProfile()
+    var emp = ""
+    
+    @IBOutlet weak var txfName: UITextField!
+    @IBOutlet weak var txfPhone: UITextField!
+    @IBOutlet weak var txfAddress: UITextField!
+    @IBOutlet weak var txfDoor: UITextField!
+    @IBAction func btnDone(_ sender: UIBarButtonItem) {
+        if txfName.hasText && txfPhone.hasText && txfAddress.hasText && txfDoor.hasText{
+            if logPro.isPhoneNumber(phone: txfPhone.text ?? ""){
+                address.addressList.append(AddressInfo(name: txfName.text ?? emp,phone: txfPhone.text ?? emp , address: txfAddress.text ?? emp , door: txfDoor.text ?? emp))
+                address.saveData()
+                
+                let alertController = UIAlertController(title: "系统提示",
+                                                        message: "收货地址已成功保存",
+                                                        preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                    action in
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                let alertController = UIAlertController(title: "系统提示",
+                                                        message: "请您输入正确的手机号码",
+                                                        preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                    action in
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+        else{
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "请您填写完整信息",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,67 +72,15 @@ class AddNewAddressTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 4
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

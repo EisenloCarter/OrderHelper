@@ -29,12 +29,13 @@ class AccountTableViewController: UITableViewController {
 
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         // MARK: 去除导航栏分割线
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // MARK: 去除多余cell
+        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
     
     override func didReceiveMemoryWarning() {

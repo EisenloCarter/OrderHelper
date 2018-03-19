@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             for i in 0..<self.imp.count{
                 sumPrice += Float(self.imp[i])! * Float(self.foodPrice[i])!
             }
-
+            //设置结算按钮状态
             if sumPrice == 0 {
                 self.btnHaveTheBill.isUserInteractionEnabled = false
                 self.btnHaveTheBill.alpha = 0.4

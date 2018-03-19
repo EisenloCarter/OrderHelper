@@ -1,21 +1,21 @@
 //
-//  Food.swift
+//  Address.swift
 //  OrderHelper
 //
-//  Created by spidepa on 15/3/18.
+//  Created by spidepa on 19/3/18.
 //  Copyright © 2018年 spidepa. All rights reserved.
 //
 
 import UIKit
 
-class Food: NSObject {
+class Address: NSObject {
     
-    var foodList = [FoodInfo]()
+    var addressList = [AddressInfo]()
     
     override init(){
         super.init()
-        print("沙盒文件夹路径：\(documentsDirectory())")
-        print("数据文件路径：\(dataFilePath())")
+        print("Address沙盒文件夹路径：\(documentsDirectory())")
+        print("Address数据文件路径：\(dataFilePath())")
     }
     
     //保存数据
@@ -24,7 +24,7 @@ class Food: NSObject {
         //申明一个归档处理对象
         let archiver = NSKeyedArchiver(forWritingWith: data)
         //将lists以对应Checklist关键字进行编码
-        archiver.encode(foodList, forKey: "foodList")
+        archiver.encode(addressList, forKey: "addressList")
         //编码结束
         archiver.finishEncoding()
         //数据写入
@@ -45,7 +45,7 @@ class Food: NSObject {
             //解码器
             let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
             //通过归档时设置的关键字Checklist还原lists
-            foodList = unarchiver.decodeObject(forKey: "foodList") as! Array
+            addressList = unarchiver.decodeObject(forKey: "addressList") as! Array
             //结束解码
             unarchiver.finishDecoding()
         }
@@ -61,6 +61,6 @@ class Food: NSObject {
     
     //获取数据文件地址
     func dataFilePath ()->String{
-        return self.documentsDirectory().appendingFormat("/foodList.plist")
+        return self.documentsDirectory().appendingFormat("/addressList.plist")
     }
 }
