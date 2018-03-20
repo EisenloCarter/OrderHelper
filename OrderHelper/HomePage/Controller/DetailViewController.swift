@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
+    @IBOutlet weak var nv: UINavigationItem!
     @IBOutlet weak var foodsTableView: UITableView!
     @IBOutlet weak var cartFooter: UIView!
     @IBAction func fakeReturnButton(_ sender: UIBarButtonItem) {
@@ -24,10 +25,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     var tmpShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var food = Food()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica-Bold", size: 25.0)!, NSAttributedStringKey.foregroundColor: UIColor.white]
+     
+        nv.title = tmpShop.name
+        nv.largeTitleDisplayMode = .automatic
+        
         onCreateData()
     }
     
@@ -55,10 +61,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         food.loadData()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tmpShop.foodNumber
     }
+    
     lazy var imp = [String](repeating: "0", count: tmpShop.foodNumber)
     lazy var foodPrice = [String ](repeating: "0", count: tmpShop.foodNumber)
     
@@ -67,8 +73,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         //展示所选店铺的餐品
         let TheOne = food.foodList.filter { (tmp) -> Bool in
             tmp.shopName == tmpShop.name
-        }
-        
+        }        
         let tempFoodImage = cell.viewWithTag(1) as! UIImageView
         tempFoodImage.image = UIImage(named: TheOne[indexPath.row].image)
         

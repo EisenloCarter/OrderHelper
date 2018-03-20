@@ -35,7 +35,6 @@ class AddressTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         address.loadData()
-        print("就是他：",address.addressList.count == 0 ? 1 : address.addressList.count)
         return address.addressList.count == 0 ? 1 : address.addressList.count
     }
 
@@ -70,19 +69,29 @@ class AddressTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
-    // MARK: - empty address cell cause crash!!!MUST FIX!!!
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            address.loadData()
-            address.addressList.remove(at: indexPath.row)
-            address.saveData()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+        if address.addressList.count > 1{
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                address.loadData()
+                address.addressList.remove(at: indexPath.row)
+                address.saveData()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            self.tableView.reloadData()
         }
-        self.tableView.reloadData()
+        else{
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "至少有一个收货地址",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
 }

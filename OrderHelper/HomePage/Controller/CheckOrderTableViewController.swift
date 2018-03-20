@@ -9,10 +9,6 @@
 import UIKit
 
 class CheckOrderTableViewController: UITableViewController {
-
-//    @IBAction func fakeReturnButton2(_ sender: UIBarButtonItem) {
-//        self.presentingViewController!.dismiss(animated: true, completion: nil)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,5 +37,4 @@ class CheckOrderTableViewController: UITableViewController {
         return cell
     }
     
-
 }

@@ -906,11 +906,11 @@
             <objects>
                 <viewController id="MIO-vM-hfv" customClass="DetailViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TUJ-Jc-tl9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DQy-kO-nYe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1045,7 +1045,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-xX-OAC">
-                                <rect key="frame" x="0.0" y="540" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="592" width="414" height="80"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9D-Wf-RPh">
                                         <rect key="frame" x="314" y="0.0" width="100" height="80"/>
@@ -1085,7 +1085,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a8w-Fk-ITJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RGH-zW-iBk">
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="RGH-zW-iBk">
                         <barButtonItem key="backBarButtonItem" title=" " id="BGZ-KR-XSW"/>
                         <barButtonItem key="leftBarButtonItem" image="back" id="6f2-Ht-DM8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1098,6 +1098,7 @@
                         <outlet property="btnHaveTheBill" destination="X9D-Wf-RPh" id="VgZ-sq-ydM"/>
                         <outlet property="cartFooter" destination="iQI-xX-OAC" id="87g-Jk-xkm"/>
                         <outlet property="foodsTableView" destination="DQy-kO-nYe" id="oFT-tE-dqE"/>
+                        <outlet property="nv" destination="RGH-zW-iBk" id="YfJ-SX-vdA"/>
                         <outlet property="priceLabel" destination="qpN-9a-qWq" id="ARo-j7-W1r"/>
                     </connections>
                 </viewController>
@@ -1110,7 +1111,7 @@
             <objects>
                 <tableViewController id="3n3-74-fdC" customClass="CheckOrderTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Z0-9p-Iu5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1138,11 +1139,11 @@
         <scene sceneID="Ltt-1d-kZb">
             <objects>
                 <navigationController id="VAx-1l-zWP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="zZa-FN-7bd">
-                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="zZa-FN-7bd">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.2893748283" green="0.54834127430000001" blue="0.99634593729999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="MIO-vM-hfv" kind="relationship" relationship="rootViewController" id="3g9-R7-vTK"/>
