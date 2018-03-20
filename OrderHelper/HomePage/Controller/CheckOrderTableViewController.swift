@@ -10,9 +10,17 @@ import UIKit
 
 class CheckOrderTableViewController: UITableViewController {
     
+    var finalShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
+    var address = Address()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        address.loadData()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +29,18 @@ class CheckOrderTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 90
+        }
+        return 60
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,7 +49,24 @@ class CheckOrderTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tempCell", for: indexPath)
+        var cell : UITableViewCell
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
+            let tmpAddress = cell.viewWithTag(1) as! UILabel
+            tmpAddress.font = UIFont.boldSystemFont(ofSize: 30)
+            
+            let tmpName = cell.viewWithTag(2) as! UILabel
+            tmpName.font = UIFont.boldSystemFont(ofSize: 15)
+            
+            if !address.addressList.isEmpty{
+                tmpAddress.text = address.addressList[0].address + address.addressList[0].door
+                tmpName.text = address.addressList[0].name + "  " + address.addressList[0].phone
+            }
+        }
+        else{
+            cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)
+            
+        }
         return cell
     }
     
