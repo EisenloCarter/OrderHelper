@@ -21,15 +21,28 @@ class CheckOrderTableViewController: UITableViewController {
         super.viewDidLoad()
         address.loadData()
 
+        addFooterButton()
+        
         secNum = imp.filter({ (tmp) -> Bool in
             tmp != "0"
         }).count
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
 
+    func addFooterButton(){
+        let payButton = UIButton()
+        payButton.frame = CGRect(x: 0,y: 0,width: 60,height: 60)
+        payButton.setTitle("确认订单", for: .normal)
+        payButton.layer.cornerRadius = 10.0;
+//        payButton.layer.borderWidth = 1.0;
+        payButton.backgroundColor = UIColor(red: 67.0/255.0, green: 205.0/255.0, blue: 135.0/255.0, alpha: 1.0)
+        payButton.setTitleColor(UIColor.white, for: .normal)
+        payButton.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
+        self.tableView.tableFooterView = payButton
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,6 +64,7 @@ class CheckOrderTableViewController: UITableViewController {
         }
         return 60
     }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 0 {
             return 20
@@ -60,6 +74,7 @@ class CheckOrderTableViewController: UITableViewController {
         }
         return 0
     }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 5
@@ -152,4 +167,15 @@ class CheckOrderTableViewController: UITableViewController {
         return newOne
     }
     
+}
+
+extension CheckOrderTableViewController{
+    @objc func btnClick(sender:UIButton){
+        if let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory") {
+            let vc = testVC as! UITabBarController
+            vc.selectedIndex = 2
+            vc.modalTransitionStyle = .coverVertical // 选择过渡效果
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
 }
