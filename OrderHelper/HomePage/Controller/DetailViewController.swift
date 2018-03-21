@@ -25,12 +25,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     var tmpShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var food = Food()
-
+    var TotalPrice = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica-Bold", size: 25.0)!, NSAttributedStringKey.foregroundColor: UIColor.white]
-     
+
         nv.title = tmpShop.name
         nv.largeTitleDisplayMode = .automatic
         
@@ -81,7 +82,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         tempFoodName.text = TheOne[indexPath.row].name
         
         let tempFoodPrice = cell.viewWithTag(3) as! UILabel
-        tempFoodPrice.text = TheOne[indexPath.row].price + "￥"
+        tempFoodPrice.text = "￥" + TheOne[indexPath.row].price
         
         foodPrice[indexPath.row] = TheOne[indexPath.row].price
         
@@ -102,7 +103,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 self.btnHaveTheBill.isUserInteractionEnabled = true
                 self.btnHaveTheBill.alpha = 1
             }
-            self.priceLabel.text = "总价：" + String(sumPrice) + "￥"
+            self.TotalPrice = String(sumPrice)
+            self.priceLabel.text = "总价：￥" + String(sumPrice)
         }
         return cell
     }
@@ -115,6 +117,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         if segue.identifier == "DVCtoCOVC"{
             let controller = segue.destination as! CheckOrderTableViewController
             controller.finalShop = tmpShop
+            controller.imp = imp
+            controller.TotalPrice = TotalPrice
+//            controller.foodPrice = foodPrice
         }
     }
     
