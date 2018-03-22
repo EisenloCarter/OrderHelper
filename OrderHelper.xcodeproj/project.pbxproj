@@ -36,6 +36,8 @@
 		0C94B46F1FFF9348003F2357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C94B46E1FFF9348003F2357 /* Assets.xcassets */; };
 		0CB20887205F88A0006296ED /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB20886205F88A0006296ED /* AddressInfo.swift */; };
 		0CB20889205F8D54006296ED /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB20888205F8D54006296ED /* Address.swift */; };
+		0CC5055F2063350600B30F80 /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5055E2063350600B30F80 /* OrderInfo.swift */; };
+		0CC505612063351F00B30F80 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC505602063351F00B30F80 /* Order.swift */; };
 		0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC6DD5201066390044BC1A /* LoginViewController.swift */; };
 		0CEE7BB5205D44D900315057 /* CheckOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */; };
 		0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */; };
@@ -95,6 +97,8 @@
 		0C94B46E1FFF9348003F2357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CB20886205F88A0006296ED /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
 		0CB20888205F8D54006296ED /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		0CC5055E2063350600B30F80 /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
+		0CC505602063351F00B30F80 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0CCC6DD5201066390044BC1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOrderTableViewController.swift; sourceTree = "<group>"; };
 		0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTableViewController.swift; sourceTree = "<group>"; };
@@ -270,7 +274,8 @@
 		0C85F5DC20122DF200E679FE /* OrderList */ = {
 			isa = PBXGroup;
 			children = (
-				0C81EE16201756B400062F15 /* OrderTableViewController.swift */,
+				0CC5055D206334D400B30F80 /* Model */,
+				0CC5055C206334C200B30F80 /* Controller */,
 			);
 			path = OrderList;
 			sourceTree = "<group>";
@@ -385,6 +390,23 @@
 			children = (
 				0CB20886205F88A0006296ED /* AddressInfo.swift */,
 				0CB20888205F8D54006296ED /* Address.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CC5055C206334C200B30F80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C81EE16201756B400062F15 /* OrderTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0CC5055D206334D400B30F80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CC5055E2063350600B30F80 /* OrderInfo.swift */,
+				0CC505602063351F00B30F80 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -632,6 +654,7 @@
 				0C846934201725DC008DDF23 /* FindTableViewController.swift in Sources */,
 				0C6C6EA8202578CC00D36F9E /* SearchResultsViewController.swift in Sources */,
 				0C931917201B04730038F17B /* LikeTableViewController.swift in Sources */,
+				0CC5055F2063350600B30F80 /* OrderInfo.swift in Sources */,
 				0C632301200B844500915869 /* AccountTableViewController.swift in Sources */,
 				0C6322FB200B824800915869 /* LoginHelper.swift in Sources */,
 				0CB20887205F88A0006296ED /* AddressInfo.swift in Sources */,
@@ -645,6 +668,7 @@
 				0C764CFB2021AD2800546B20 /* SearchTableViewController.swift in Sources */,
 				0C29FC0C1FFE1281008E79B8 /* OrderHelper.xcdatamodeld in Sources */,
 				0C931919201B04880038F17B /* HistoryTableViewController.swift in Sources */,
+				0CC505612063351F00B30F80 /* Order.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

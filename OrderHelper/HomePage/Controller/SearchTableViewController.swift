@@ -28,7 +28,7 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
-
+        
         let searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchBar.placeholder = "请输入店铺名或商品名"
         searchController.searchBar.autocapitalizationType = .none

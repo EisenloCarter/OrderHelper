@@ -16,11 +16,11 @@ class CheckOrderTableViewController: UITableViewController {
     var food = Food()
     var secNum = 0
     var TotalPrice = ""
+    var order = Order()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         address.loadData()
-
         addFooterButton()
         
         secNum = imp.filter({ (tmp) -> Bool in
@@ -36,7 +36,6 @@ class CheckOrderTableViewController: UITableViewController {
         payButton.frame = CGRect(x: 0,y: 0,width: 60,height: 60)
         payButton.setTitle("确认订单", for: .normal)
         payButton.layer.cornerRadius = 10.0;
-//        payButton.layer.borderWidth = 1.0;
         payButton.backgroundColor = UIColor(red: 67.0/255.0, green: 205.0/255.0, blue: 135.0/255.0, alpha: 1.0)
         payButton.setTitleColor(UIColor.white, for: .normal)
         payButton.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
@@ -172,6 +171,16 @@ class CheckOrderTableViewController: UITableViewController {
 extension CheckOrderTableViewController{
     @objc func btnClick(sender:UIButton){
         if let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory") {
+            
+            let date = Date()
+            let time = DateFormatter()
+            time.dateFormat = "yyyy-MM-dd HH:mm"
+            let timeStr = time.string(from: date) as String
+
+            order.loadData()
+            order.orderList.append(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopImage, time: timeStr, price: "￥" + TotalPrice))
+            order.saveData()
+            
             let vc = testVC as! UITabBarController
             vc.selectedIndex = 2
             vc.modalTransitionStyle = .coverVertical // 选择过渡效果
