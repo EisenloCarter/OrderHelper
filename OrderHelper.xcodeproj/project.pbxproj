@@ -39,6 +39,8 @@
 		0CC5055F2063350600B30F80 /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5055E2063350600B30F80 /* OrderInfo.swift */; };
 		0CC505612063351F00B30F80 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC505602063351F00B30F80 /* Order.swift */; };
 		0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC6DD5201066390044BC1A /* LoginViewController.swift */; };
+		0CCF6D2A206698580025B6CA /* RedPackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF6D29206698580025B6CA /* RedPackTableViewController.swift */; };
+		0CCF6D2C20669A510025B6CA /* PurseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF6D2B20669A510025B6CA /* PurseTableViewController.swift */; };
 		0CEE7BB5205D44D900315057 /* CheckOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */; };
 		0CEFCE972014C75E00F04BB1 /* UserNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */; };
 		C25893C3B768D5B8CE40B7CF /* Pods_OrderHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A5C9507A41618FF89AFE4 /* Pods_OrderHelper.framework */; };
@@ -100,6 +102,8 @@
 		0CC5055E2063350600B30F80 /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
 		0CC505602063351F00B30F80 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0CCC6DD5201066390044BC1A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0CCF6D29206698580025B6CA /* RedPackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedPackTableViewController.swift; sourceTree = "<group>"; };
+		0CCF6D2B20669A510025B6CA /* PurseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurseTableViewController.swift; sourceTree = "<group>"; };
 		0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOrderTableViewController.swift; sourceTree = "<group>"; };
 		0CEFCE962014C75E00F04BB1 /* UserNameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameTableViewController.swift; sourceTree = "<group>"; };
 		23F167674FAA7FF96CE868F9 /* Pods-OrderHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderHelper/Pods-OrderHelper.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		0C85F5D920122BF700E679FE /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				0CCF6D27206698070025B6CA /* Money */,
 				0C85F5DB20122D0400E679FE /* Controller */,
 				0C931913201B043A0038F17B /* History */,
 				0C931912201B04270038F17B /* Like */,
@@ -418,6 +423,23 @@
 				0CA198032007029C008DB156 /* Controller */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0CCF6D27206698070025B6CA /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				0CCF6D28206698240025B6CA /* Controller */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
+		0CCF6D28206698240025B6CA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0CCF6D29206698580025B6CA /* RedPackTableViewController.swift */,
+				0CCF6D2B20669A510025B6CA /* PurseTableViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		0CE204212025FECD00AB9E44 /* Model */ = {
@@ -642,6 +664,7 @@
 			files = (
 				0C175DC9203E6A1200D2A023 /* Preferentials.swift in Sources */,
 				0C85F5D62012284400E679FE /* SettingTableViewController.swift in Sources */,
+				0CCF6D2A206698580025B6CA /* RedPackTableViewController.swift in Sources */,
 				0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */,
 				0C764CF92021688900546B20 /* SearchItems.swift in Sources */,
 				0C175DC6203E5D8D00D2A023 /* FindDetailViewController.swift in Sources */,
@@ -661,6 +684,7 @@
 				0C3CC243205A092100BB1984 /* FoodInfo.swift in Sources */,
 				0CB20889205F8D54006296ED /* Address.swift in Sources */,
 				0C6C1390203ACD2800071E3E /* DetailViewController.swift in Sources */,
+				0CCF6D2C20669A510025B6CA /* PurseTableViewController.swift in Sources */,
 				0C931911201B03E30038F17B /* AddNewAddressTableViewController.swift in Sources */,
 				0C29FC041FFE1281008E79B8 /* AppDelegate.swift in Sources */,
 				0C85F5E12012327300E679FE /* UIImageView+Extensions.swift in Sources */,
