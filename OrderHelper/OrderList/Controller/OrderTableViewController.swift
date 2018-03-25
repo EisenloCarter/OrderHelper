@@ -89,14 +89,4 @@ class OrderTableViewController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        order.loadData()
-//        if editingStyle == .delete && order.orderList.count > 0{
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            order.orderList.remove(at: indexPath.row)
-//            order.saveData()
-//        }
-//    }
 }

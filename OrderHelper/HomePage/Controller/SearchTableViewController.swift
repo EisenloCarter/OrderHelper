@@ -10,6 +10,11 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {    
 
+    @IBAction func btn1(_ sender: UIButton) {
+        self.search("肯德基")
+        print("yeeeeeeeeeeeeeeees")
+    }
+    
     private let items = [
         "杨国福麻辣烫",
         "绝味鸭脖",
@@ -22,7 +27,7 @@ class SearchTableViewController: UITableViewController {
         "蔚甜品",
         "美味餐厅",
         "滋味烧烤",
-        "兰州拉面"
+        "兰州拉面",
         ]
     
     override func viewDidLoad() {

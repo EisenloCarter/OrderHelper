@@ -178,7 +178,7 @@ extension CheckOrderTableViewController{
             let timeStr = time.string(from: date) as String
 
             order.loadData()
-            order.orderList.append(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopImage, time: timeStr, price: "￥" + TotalPrice))
+            order.orderList.insert(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopImage, time: timeStr, price: "￥" + TotalPrice), at: 0)
             order.saveData()
             
             let vc = testVC as! UITabBarController
