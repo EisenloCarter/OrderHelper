@@ -67,6 +67,28 @@ class OrderTableViewController: UITableViewController {
         return true
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if order.orderList.count > 1{
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                order.loadData()
+                order.orderList.remove(at: indexPath.row)
+                order.saveData()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            self.tableView.reloadData()
+        }
+        else{
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "至少有一条订单信息",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
     // Override to support editing the table view.
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        order.loadData()

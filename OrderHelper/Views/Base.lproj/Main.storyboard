@@ -2143,7 +2143,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ptP-aK-LSL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purse" translatesAutoresizingMaskIntoConstraints="NO" id="ptP-aK-LSL">
                                             <rect key="frame" x="20" y="47" width="45" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -2195,6 +2195,7 @@
         <image name="icons8-settings-30" width="30" height="30"/>
         <image name="icons8-time-machine-filled-30" width="30" height="30"/>
         <image name="praise" width="48" height="48"/>
+        <image name="purse" width="212" height="212"/>
         <image name="snacks" width="316" height="317"/>
         <image name="timg" width="1024" height="341"/>
     </resources>

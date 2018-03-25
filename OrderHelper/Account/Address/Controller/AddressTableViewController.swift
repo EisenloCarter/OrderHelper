@@ -35,7 +35,7 @@ class AddressTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         address.loadData()
-        return address.addressList.count == 0 ? 1 : address.addressList.count
+        return address.addressList.count
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -46,21 +46,13 @@ class AddressTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
         
         let lbAddress = cell.viewWithTag(1) as! UILabel
+        lbAddress.text = address.addressList[indexPath.row].address + " " + address.addressList[indexPath.row].door
+        lbAddress.font=UIFont.boldSystemFont(ofSize: 25)
+        
         let lbName = cell.viewWithTag(2) as! UILabel
-        print(address.addressList.isEmpty)
-        if !address.addressList.isEmpty {
-            lbAddress.text = address.addressList[indexPath.row].address + " " + address.addressList[indexPath.row].door
-            lbAddress.font=UIFont.boldSystemFont(ofSize: 25)
-            
-            lbName.text = address.addressList[indexPath.row].name + " " + address.addressList[indexPath.row].phone
-            lbName.font=UIFont.systemFont(ofSize: 15)
-            lbName.textColor = UIColor.gray
-        }
-        else{
-            lbAddress.text = ""
-            
-            lbName.text = ""
-        }
+        lbName.text = address.addressList[indexPath.row].name + " " + address.addressList[indexPath.row].phone
+        lbName.font=UIFont.systemFont(ofSize: 15)
+        lbName.textColor = UIColor.gray
         return cell
     }
 
