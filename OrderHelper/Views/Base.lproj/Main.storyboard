@@ -1542,6 +1542,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="KvT-ba-jnN" kind="show" id="1iH-Rd-fCf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1567,6 +1570,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f76-QG-Pvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22" y="942"/>
+        </scene>
+        <!--其他-->
+        <scene sceneID="v0m-1B-ycD">
+            <objects>
+                <viewController title="其他" id="KvT-ba-jnN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UxR-bP-dwL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="L73-JX-aOM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lj6-xu-Hil" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-810" y="1639"/>
         </scene>
         <!--我的红包-->
         <scene sceneID="qia-dE-GMU">
@@ -1663,7 +1681,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVD-ZN-dRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="2296"/>
+            <point key="canvasLocation" x="-810" y="2296"/>
         </scene>
         <!--收藏-->
         <scene sceneID="R0n-uT-et9">
@@ -1695,7 +1713,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNH-V2-BBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="2296"/>
+            <point key="canvasLocation" x="-48" y="2296"/>
         </scene>
         <!--足迹-->
         <scene sceneID="hTu-pb-5zc">
@@ -1901,7 +1919,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbB-UP-vd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="2848"/>
+            <point key="canvasLocation" x="-810" y="2985"/>
         </scene>
         <!--绑定手机-->
         <scene sceneID="2nS-9V-YMu">
