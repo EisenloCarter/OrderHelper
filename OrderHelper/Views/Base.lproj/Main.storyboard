@@ -103,7 +103,79 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIL-5w-URW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="-1841"/>
+            <point key="canvasLocation" x="-352" y="-1902"/>
+        </scene>
+        <!--Lucky Table View Controller-->
+        <scene sceneID="AXY-8W-Vb6">
+            <objects>
+                <tableViewController id="pKF-KF-fg3" customClass="LuckyTableViewController" customModule="OrderHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YDg-LN-8zp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LuckyCell" rowHeight="120" id="5Ir-1g-fwb">
+                                <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Ir-1g-fwb" id="Kel-Ie-xM2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="guK-PZ-1mw">
+                                            <rect key="frame" x="20" y="11" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="GgM-Kv-dkA"/>
+                                                <constraint firstAttribute="width" constant="100" id="NFc-pu-Dx2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M3-G0-GbN">
+                                            <rect key="frame" x="128" y="11" width="266" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mb-Nx-hNO">
+                                            <rect key="frame" x="128" y="57" width="266" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiI-Qg-Fa1">
+                                            <rect key="frame" x="128" y="86" width="117" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA0-Ae-y5a">
+                                            <rect key="frame" x="294" y="86" width="100" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="guK-PZ-1mw" firstAttribute="top" secondItem="Kel-Ie-xM2" secondAttribute="topMargin" id="95h-td-qIe"/>
+                                        <constraint firstItem="guK-PZ-1mw" firstAttribute="leading" secondItem="Kel-Ie-xM2" secondAttribute="leadingMargin" id="mKc-Cf-LXO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VAx-1l-zWP" kind="show" identifier="SRtoDVC3" id="NsR-Sh-gax"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pKF-KF-fg3" id="ppe-9u-t6H"/>
+                            <outlet property="delegate" destination="pKF-KF-fg3" id="hz8-bC-pZW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzQ-PJ-gfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="-1903"/>
         </scene>
         <!--首页-->
         <scene sceneID="HDB-LU-XGR">
@@ -277,10 +349,16 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lji-YY-olp">
                                                             <rect key="frame" x="0.0" y="0.0" width="183" height="128"/>
                                                             <state key="normal" backgroundImage="food2"/>
+                                                            <connections>
+                                                                <segue destination="pKF-KF-fg3" kind="show" id="zf8-Zu-2Zl"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-3D-9Dh">
                                                             <rect key="frame" x="191" y="0.0" width="183" height="128"/>
                                                             <state key="normal" backgroundImage="food5"/>
+                                                            <connections>
+                                                                <segue destination="pKF-KF-fg3" kind="show" id="NrG-x1-SZL"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -306,14 +384,23 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-1U-jF9">
                                                             <rect key="frame" x="0.0" y="0.0" width="119.33333333333333" height="128"/>
                                                             <state key="normal" title="新店新品" image="food11"/>
+                                                            <connections>
+                                                                <segue destination="pKF-KF-fg3" kind="show" id="UIa-QK-wdz"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XX-TC-Tbl">
                                                             <rect key="frame" x="127.33333333333334" y="0.0" width="119.33333333333334" height="128"/>
                                                             <state key="normal" title="限时好礼" image="food3"/>
+                                                            <connections>
+                                                                <segue destination="pKF-KF-fg3" kind="show" id="hdO-do-paa"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-4n-Mbp">
                                                             <rect key="frame" x="254.66666666666671" y="0.0" width="119.33333333333334" height="128"/>
-                                                            <state key="normal" image="food8"/>
+                                                            <state key="normal" title="口碑老店" image="food8"/>
+                                                            <connections>
+                                                                <segue destination="pKF-KF-fg3" kind="show" id="iCx-UT-cgK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -330,7 +417,7 @@
                                         <rect key="frame" x="0.0" y="740" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Db-ed-aHJ" id="y6u-9e-5Zy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经到底了哦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZn-45-ge5">
@@ -1180,7 +1267,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-xX-OAC">
-                                <rect key="frame" x="0.0" y="592" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="543" width="414" height="80"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9D-Wf-RPh">
                                         <rect key="frame" x="314" y="0.0" width="100" height="80"/>
@@ -1281,6 +1368,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="GiL-Oj-WIL" kind="show" id="Wv6-sF-Jmc"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shopNameCell" rowHeight="60" id="d2M-u4-IEq">
                                 <rect key="frame" x="0.0" y="118" width="414" height="60"/>
@@ -1769,7 +1859,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="收货地址" id="JvZ-dV-jni">
-                        <barButtonItem key="backBarButtonItem" title=" " id="mrA-IU-RA2"/>
+                        <barButtonItem key="backBarButtonItem" title="  " id="mrA-IU-RA2"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1OH-gL-6ni">
                             <connections>
                                 <segue destination="bz1-Gv-EOs" kind="show" id="hUi-DZ-hqK"/>
@@ -2316,7 +2406,9 @@
         <image name="timg" width="1024" height="341"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kqd-4I-1XC"/>
+        <segue reference="jcm-BA-1k8"/>
+        <segue reference="NsR-Sh-gax"/>
+        <segue reference="NrG-x1-SZL"/>
         <segue reference="JQP-81-WKT"/>
     </inferredMetricsTieBreakers>
 </document>

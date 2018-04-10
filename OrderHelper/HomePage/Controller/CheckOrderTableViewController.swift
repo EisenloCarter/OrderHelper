@@ -101,7 +101,7 @@ class CheckOrderTableViewController: UITableViewController {
         if indexPath.section == 0 {
             cell = tableView.dequeueReusableCell(withIdentifier: "addressCell", for: indexPath)
             let tmpAddress = cell.viewWithTag(1) as! UILabel
-            tmpAddress.font = UIFont.boldSystemFont(ofSize: 30)
+            tmpAddress.font = UIFont.boldSystemFont(ofSize: 20)
             
             let tmpName = cell.viewWithTag(2) as! UILabel
             tmpName.font = UIFont.boldSystemFont(ofSize: 15)

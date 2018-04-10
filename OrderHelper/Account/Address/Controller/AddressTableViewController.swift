@@ -47,7 +47,7 @@ class AddressTableViewController: UITableViewController {
         
         let lbAddress = cell.viewWithTag(1) as! UILabel
         lbAddress.text = address.addressList[indexPath.row].address + " " + address.addressList[indexPath.row].door
-        lbAddress.font=UIFont.boldSystemFont(ofSize: 25)
+        lbAddress.font=UIFont.boldSystemFont(ofSize: 20)
         
         let lbName = cell.viewWithTag(2) as! UILabel
         lbName.text = address.addressList[indexPath.row].name + " " + address.addressList[indexPath.row].phone

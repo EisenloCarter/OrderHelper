@@ -35,6 +35,7 @@
 		0C931917201B04730038F17B /* LikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C931916201B04730038F17B /* LikeTableViewController.swift */; };
 		0C931919201B04880038F17B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C931918201B04880038F17B /* HistoryTableViewController.swift */; };
 		0C94B46F1FFF9348003F2357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C94B46E1FFF9348003F2357 /* Assets.xcassets */; };
+		0CAB884A207C9C5F00EB9199 /* LuckyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAB8849207C9C5F00EB9199 /* LuckyTableViewController.swift */; };
 		0CB20887205F88A0006296ED /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB20886205F88A0006296ED /* AddressInfo.swift */; };
 		0CB20889205F8D54006296ED /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB20888205F8D54006296ED /* Address.swift */; };
 		0CC5055F2063350600B30F80 /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC5055E2063350600B30F80 /* OrderInfo.swift */; };
@@ -100,6 +101,7 @@
 		0C931916201B04730038F17B /* LikeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewController.swift; sourceTree = "<group>"; };
 		0C931918201B04880038F17B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		0C94B46E1FFF9348003F2357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0CAB8849207C9C5F00EB9199 /* LuckyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyTableViewController.swift; sourceTree = "<group>"; };
 		0CB20886205F88A0006296ED /* AddressInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
 		0CB20888205F8D54006296ED /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		0CC5055E2063350600B30F80 /* OrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				0C764CFA2021AD2800546B20 /* SearchTableViewController.swift */,
+				0CAB8849207C9C5F00EB9199 /* LuckyTableViewController.swift */,
 				0C6C138F203ACD2800071E3E /* DetailViewController.swift */,
 				0C6C6EA7202578CC00D36F9E /* SearchResultsViewController.swift */,
 				0CEE7BB4205D44D900315057 /* CheckOrderTableViewController.swift */,
@@ -670,6 +673,7 @@
 			files = (
 				0C175DC9203E6A1200D2A023 /* Preferentials.swift in Sources */,
 				0C85F5D62012284400E679FE /* SettingTableViewController.swift in Sources */,
+				0CAB884A207C9C5F00EB9199 /* LuckyTableViewController.swift in Sources */,
 				0CCF6D2A206698580025B6CA /* RedPackTableViewController.swift in Sources */,
 				0CCC6DD6201066390044BC1A /* LoginViewController.swift in Sources */,
 				0C764CF92021688900546B20 /* SearchItems.swift in Sources */,

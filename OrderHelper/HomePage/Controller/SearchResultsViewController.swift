@@ -20,7 +20,8 @@ class SearchResultsViewController: UITableViewController {
     }
     
     func search(_ text: String, in items: [String]) {
-        results = items.flatMap { item in            let matchedRange = (item as NSString).range(of: text, options: .caseInsensitive)
+        results = items.flatMap { item in
+            let matchedRange = (item as NSString).range(of: text, options: .caseInsensitive)
             guard matchedRange.location != NSNotFound else {
                 return nil
             }
@@ -100,12 +101,12 @@ class SearchResultsViewController: UITableViewController {
             amountLabel.font = UIFont.systemFont(ofSize: 12)
             
             let minDeliveryPriceLabel = cell.viewWithTag(3) as! UILabel
-            minDeliveryPriceLabel.text = tempShop.minDeliveryPrice
+            minDeliveryPriceLabel.text = tempShop.minDeliveryPrice + "起送"
             minDeliveryPriceLabel.textColor = UIColor.gray
             minDeliveryPriceLabel.font = UIFont.systemFont(ofSize: 12)
             
             let deliveryTimeLabel = cell.viewWithTag(4) as! UILabel
-            deliveryTimeLabel.text = tempShop.deliveryTime
+            deliveryTimeLabel.text = "大约" + tempShop.deliveryTime + "送达"
             deliveryTimeLabel.textColor = UIColor.gray
             deliveryTimeLabel.font = UIFont.systemFont(ofSize: 12)
         }
