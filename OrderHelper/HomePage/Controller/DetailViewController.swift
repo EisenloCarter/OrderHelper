@@ -23,7 +23,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    var tmpShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
+    var tmpShop = Shop(category:"", name:"", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var food = Food()
     var TotalPrice = ""
     

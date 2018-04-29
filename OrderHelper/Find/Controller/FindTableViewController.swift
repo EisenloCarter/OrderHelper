@@ -42,8 +42,15 @@ class FindTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "findCell", for: indexPath)
+        let prefImageView = cell.viewWithTag(1) as! UIImageView
+        prefImageView.image = UIImage(named: preferentialImages[indexPath.section]);
+//        cell.imageView?.adjustsImageSizeForAccessibilityContentSizeCategory = true
+//        cell.imageView?.image = UIImage(named: preferentialImages[indexPath.section]);
+//        cell.imageView?.image?.draw(in: CGRect(origin: CGPoint.zero, size: (cell.imageView?.image?.size)!))
+//        cell.imageView?.image = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsGetImageFromCurrentImageContext();
+        
 
-        cell.imageView?.image = UIImage(named: preferentialImages[indexPath.section])
         return cell
     }
 

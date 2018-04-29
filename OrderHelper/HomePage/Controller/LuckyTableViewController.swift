@@ -11,14 +11,14 @@ import UIKit
 class LuckyTableViewController: UITableViewController {
 
     var shop = [Shop]()
-    var tempShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
+    var tempShop = Shop(category:"", name:"", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         shop = [
-            Shop(category:"传统美食", name:"美味餐厅", shopImage: "mwctLogo.png", shopLogo: "mwctLogo.jpg", deliveryTime: "32 mins", minDeliveryPrice: "¥20", amount: "月售25单", foodNumber: 1),
-            Shop(category:"小吃零食", name:"滋味烧烤", shopImage: "skLogo.jpg", shopLogo: "skLogo.jpg", deliveryTime: "26 mins", minDeliveryPrice: "¥25", amount: "月售32单", foodNumber: 1)]
+            Shop(category:"传统美食", name:"美味餐厅", shopLogo: "mwctLogo.jpg", deliveryTime: "32 mins", minDeliveryPrice: "¥20", amount: "月售25单", foodNumber: 1),
+            Shop(category:"小吃零食", name:"滋味烧烤", shopLogo: "skLogo.jpg", deliveryTime: "26 mins", minDeliveryPrice: "¥25", amount: "月售32单", foodNumber: 1)]
     }
     
     override func didReceiveMemoryWarning() {

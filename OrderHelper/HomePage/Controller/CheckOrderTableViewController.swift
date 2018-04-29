@@ -10,7 +10,7 @@ import UIKit
 
 class CheckOrderTableViewController: UITableViewController {
     
-    var finalShop = Shop(category:"", name:"", shopImage: "", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
+    var finalShop = Shop(category:"", name:"", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var address = Address()
     lazy var imp = [String](repeating: "0", count: finalShop.foodNumber)
     var food = Food()
@@ -178,7 +178,7 @@ extension CheckOrderTableViewController{
             let timeStr = time.string(from: date) as String
 
             order.loadData()
-            order.orderList.insert(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopImage, time: timeStr, price: "￥" + TotalPrice), at: 0)
+            order.orderList.insert(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopLogo, time: timeStr, price: "￥" + TotalPrice), at: 0)
             order.saveData()
             
             let vc = testVC as! UITabBarController
