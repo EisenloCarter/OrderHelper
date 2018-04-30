@@ -7,31 +7,19 @@
 //
 
 import UIKit
+import LeanCloud
 
-class SearchTableViewController: UITableViewController {    
+class SearchTableViewController: UITableViewController {
+    
+    var tmpShop = Shop(category:"", name:"", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
+    var food = Food()
+    var items = [] as Array
 
-    @IBAction func btn1(_ sender: UIButton) {
-        self.search("肯德基")
-        print("yeeeeeeeeeeeeeeees")
-    }
-    
-    private let items = [
-        "杨国福麻辣烫",
-        "绝味鸭脖",
-        "肯德基",
-        "麦当劳",
-        "必胜客",
-        "星巴克",
-        "一粥七天",
-        "COCO都可",
-        "蔚甜品",
-        "美味餐厅",
-        "滋味烧烤",
-        "兰州拉面",
-        ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        onCreateShopNameData()
+        onCreateFoodData()
+        
         let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
         
         let searchController = UISearchController(searchResultsController: searchResultsController)
@@ -46,6 +34,46 @@ class SearchTableViewController: UITableViewController {
         definesPresentationContext = true
         // Setup the Scope Bar
         searchController.searchBar.scopeButtonTitles = ["传统美食", "快餐便当", "小吃零食", "甜品饮品"]
+    }
+    
+    func onCreateShopNameData(){
+        let query = LCQuery(className: "Shop")
+        query.whereKey("pic", .existed)
+        query.find { result in
+            switch result {
+            case .success(let objects):
+                for thisResult in objects{
+                    let addThis = thisResult.get("name")?.stringValue
+                    self.items.append(addThis as Any)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onCreateFoodData(){
+        let query = LCQuery(className: "FoodInfo")
+        query.whereKey("pic", .existed)
+        query.find { result in
+            switch result {
+            case .success(let objects):
+                for resultFood in objects{
+                    
+                    print("初始测试位置",resultFood.get("name")!.stringValue ?? "???")
+                    
+                    let addThisFood = FoodInfo(  shopName: resultFood.get("shopName")!.stringValue ?? "???",
+                                                 name: resultFood.get("name")!.stringValue ?? "???",
+                                                 image: resultFood.get("image")!.stringValue ?? "???",
+                                                 price: resultFood.get("price")!.stringValue ?? "???")
+                    self.food.foodList.append(addThisFood)
+                    self.food.saveData()
+                    print("数量：",self.food.foodList.count)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private var searchResultsController: SearchResultsViewController? {
@@ -88,7 +116,7 @@ extension SearchTableViewController {
         guard let text = text, !text.isEmpty else {
             return
         }
-        searchResultsController?.search(text, in: items)
+        searchResultsController?.search(text, in: items as! [String])
     }
 }
 
