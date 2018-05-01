@@ -51,6 +51,7 @@ class AddNewAddressTableViewController: UITableViewController {
                 })
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
+                
             }
             else{
                 let alertController = UIAlertController(title: "系统提示",

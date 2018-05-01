@@ -1965,7 +1965,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Le-H4r">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Le-H4r">
                                                     <rect key="frame" x="71" y="0.0" width="305" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="335" id="dgR-vt-kzh"/>
@@ -1982,12 +1982,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sEC-Le-H4r" firstAttribute="leading" secondItem="8SK-px-5n1" secondAttribute="trailing" id="4lr-3n-zXk"/>
+                                                <constraint firstItem="sEC-Le-H4r" firstAttribute="leading" secondItem="8SK-px-5n1" secondAttribute="trailing" constant="8.5" id="4lr-3n-zXk"/>
                                                 <constraint firstItem="8SK-px-5n1" firstAttribute="leading" secondItem="icY-iT-Ww2" secondAttribute="leadingMargin" id="93V-pd-kxo"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8SK-px-5n1" secondAttribute="bottom" id="Ae3-tt-lrs"/>
                                                 <constraint firstItem="8SK-px-5n1" firstAttribute="top" secondItem="icY-iT-Ww2" secondAttribute="topMargin" id="CBo-p0-Kix"/>
                                                 <constraint firstAttribute="bottom" secondItem="sEC-Le-H4r" secondAttribute="bottom" id="DOU-nW-DC5"/>
-                                                <constraint firstAttribute="trailing" secondItem="sEC-Le-H4r" secondAttribute="trailing" id="IMP-yZ-Ops"/>
+                                                <constraint firstAttribute="trailing" secondItem="sEC-Le-H4r" secondAttribute="trailing" constant="-1" id="IMP-yZ-Ops"/>
                                                 <constraint firstItem="sEC-Le-H4r" firstAttribute="top" secondItem="icY-iT-Ww2" secondAttribute="top" id="dVK-g2-6PP"/>
                                             </constraints>
                                         </tableViewCellContentView>
