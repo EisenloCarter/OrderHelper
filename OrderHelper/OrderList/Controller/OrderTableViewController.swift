@@ -41,23 +41,27 @@ class OrderTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)
-        if order.orderList.count > 0 {
-            let orderImage = cell.viewWithTag(1) as! UIImageView
-            orderImage.image = UIImage(named: order.orderList[indexPath.row].shopImage)
-            
-            let orderShopName = cell.viewWithTag(2) as! UILabel
-            orderShopName.text = order.orderList[indexPath.row].shopName
-            
-            let orderTime = cell.viewWithTag(3) as! UILabel
-            orderTime.font = UIFont.systemFont(ofSize: 12)
-            orderTime.textColor = UIColor.gray
-            orderTime.text = order.orderList[indexPath.row].time
-            
-//            let orderState = cell.viewWithTag(4) as! UILabel
-            
-            let orderCost = cell.viewWithTag(5) as! UILabel
-            orderCost.text = order.orderList[indexPath.row].price
+        if (UserDefaults.standard.string(forKey: "UserName") != nil) {
+            if order.orderList.count > 0 {
+                let orderImage = cell.viewWithTag(1) as! UIImageView
+                orderImage.image = UIImage(named: order.orderList[indexPath.row].shopImage)
+                
+                let orderShopName = cell.viewWithTag(2) as! UILabel
+                orderShopName.text = order.orderList[indexPath.row].shopName
+                
+                let orderTime = cell.viewWithTag(3) as! UILabel
+                orderTime.font = UIFont.systemFont(ofSize: 12)
+                orderTime.textColor = UIColor.gray
+                orderTime.text = order.orderList[indexPath.row].time
+                
+                let orderState = cell.viewWithTag(4) as! UILabel
+                orderState.text = "订单已完成"
+                
+                let orderCost = cell.viewWithTag(5) as! UILabel
+                orderCost.text = order.orderList[indexPath.row].price
+            }
         }
+
         return cell
     }
 

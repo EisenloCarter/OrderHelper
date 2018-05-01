@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import LeanCloud
 
 class AddNewAddressTableViewController: UITableViewController {
     
     var address = Address()
     let logPro = LoginProfile()
-    var emp = ""
+    var emp = "???"
     
     @IBOutlet weak var txfName: UITextField!
     @IBOutlet weak var txfPhone: UITextField!
@@ -25,6 +26,22 @@ class AddNewAddressTableViewController: UITableViewController {
                 address.loadData()
                 address.addressList.append(AddressInfo(name: txfName.text ?? emp,phone: txfPhone.text ?? emp , address: txfAddress.text ?? emp , door: txfDoor.text ?? emp))
                 address.saveData()
+                
+                let newAddress = LCObject(className: "AddressInfo")
+                newAddress.set("user", value: UserDefaults.standard.string(forKey: "UserName") ?? "???")
+                newAddress.set("name", value: txfName.text ?? emp)
+                newAddress.set("phone", value: txfPhone.text ?? emp)
+                newAddress.set("address", value: txfAddress.text ?? emp)
+                newAddress.set("door", value: txfDoor.text ?? emp)
+                newAddress.save(){ result in
+                    switch result {
+                    case .success:
+                        print("地址保存成功！")
+                        break
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
                 
                 let alertController = UIAlertController(title: "系统提示",
                                                         message: "收货地址已成功保存",

@@ -41,6 +41,7 @@ class LoginViewController: UITableViewController {
     
     //判断验证码是否与手机号匹配
     @IBAction func loginButton(_ sender: UIButton) {
+        
         let profile = LoginProfile()
         if ((safeCodeTextField.text == safeNum) && profile.isPhoneNumber(phone: phoneNumTextField.text!)) {
             print("All correct!")
@@ -56,30 +57,38 @@ class LoginViewController: UITableViewController {
             LCUser.logIn(username: phoneNumTextField.text!, password: phoneNumTextField.text!) { result in
                 switch result {
                 case .success( _):
-                    print("登录成功！")
+                    print("登录成功！用户名：",UserDefaults.standard.string(forKey: "UserName") ?? "???")
+                    UserDefaults.standard.set(self.phoneNumTextField.text, forKey: "UserName")
+                    UserDefaults.standard.synchronize()
+                    
+                    let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory")
+                    let vc = testVC as! UITabBarController
+                    vc.selectedIndex = 3
+                    vc.modalTransitionStyle = .coverVertical // 选择过渡效果
+                    self.present(vc, animated: true, completion: nil)
+                    
                     activityIndicator.removeFromSuperview()
-                    self.navigationController?.popViewController(animated: true)
                     break
                 case .failure(let error):
                     let newUser = LCUser()
                     newUser.username = LCString(self.phoneNumTextField.text!)
                     newUser.password = LCString(self.phoneNumTextField.text!)
-                    //MARK: 登录后用户操作
-                    newUser.signUp()
+                    newUser.signUp({ (_) in
+                        print("yes")
+                    })
+                    
                     print("登录失败：",error)
                     activityIndicator.removeFromSuperview()
                     
-                    //MARK: 登录失败则不进行界面跳转（由于LeanCode问题，很容易登录超时失败）
+                    //MARK: 登录失败则不进行界面跳转
                     let alertController = UIAlertController(title: "系统提示",
-                                                            message: "请您重新登录",
+                                                            message: "请再次点击”登录“完成登录/注册",
                                                             preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "好的", style: .default, handler: {
                         action in
-                        print("重新登录：用户点击了确定")
                     })
                     let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: {
                         action in
-                        print("取消：用户点击了取消")
                     })
                     alertController.addAction(okAction)
                     alertController.addAction(cancelAction)
@@ -93,7 +102,6 @@ class LoginViewController: UITableViewController {
                                                 preferredStyle: .alert)
             let okAction = UIAlertAction(title: "好的", style: .default, handler: {
                 action in
-                print("登录：用户点击了确定")
             })
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)

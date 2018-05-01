@@ -14,14 +14,20 @@ class SearchTableViewController: UITableViewController {
     var tmpShop = Shop(category:"", name:"", shopLogo: "", deliveryTime: "", minDeliveryPrice: "", amount: "", foodNumber: 0)
     var food = Food()
     var items = [] as Array
+    var order = Order()
+    var address = Address()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         onCreateShopNameData()
         onCreateFoodData()
         
-        let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
+        if (UserDefaults.standard.string(forKey: "UserName") != nil){
+            onCreateOrderData()
+            onCreateAddressData()
+        }
         
+        let searchResultsController = storyboard?.instantiateViewController(withIdentifier: "searchResults")
         let searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchBar.placeholder = "请输入店铺名或商品名"
         searchController.searchBar.autocapitalizationType = .none
@@ -59,16 +65,57 @@ class SearchTableViewController: UITableViewController {
             switch result {
             case .success(let objects):
                 for resultFood in objects{
-                    
-                    print("初始测试位置",resultFood.get("name")!.stringValue ?? "???")
-                    
                     let addThisFood = FoodInfo(  shopName: resultFood.get("shopName")!.stringValue ?? "???",
                                                  name: resultFood.get("name")!.stringValue ?? "???",
                                                  image: resultFood.get("image")!.stringValue ?? "???",
                                                  price: resultFood.get("price")!.stringValue ?? "???")
                     self.food.foodList.append(addThisFood)
                     self.food.saveData()
-                    print("数量：",self.food.foodList.count)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onCreateOrderData(){
+        let query = LCQuery(className: "OrderInfo")
+        query.whereKey("user", .equalTo(UserDefaults.standard.string(forKey: "UserName") ?? "???"))
+        query.find { result in
+            switch result {
+            case .success(let objects):
+                for thisResult in objects{
+                    let addThis = OrderInfo( user: thisResult.get("user")!.stringValue ?? "???",
+                                              shopName: thisResult.get("shopName")!.stringValue ?? "???",
+                                              shopImage: thisResult.get("shopImage")!.stringValue ?? "???",
+                                              time: thisResult.get("time")!.stringValue ?? "???",
+                                              price: thisResult.get("price")!.stringValue ?? "???")
+                    self.order.orderList.append(addThis)
+                    self.order.saveData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func onCreateAddressData(){
+        let query = LCQuery(className: "AddressInfo")
+        query.whereKey("user", .equalTo(UserDefaults.standard.string(forKey: "UserName") ?? "???"))
+        query.find { result in
+            switch result {
+            case .success(let objects):
+                for thisResult in objects{
+                    
+                    print(thisResult.get("user")!.stringValue ?? "???")
+                    
+                    let addThis = AddressInfo( user: thisResult.get("user")!.stringValue ?? "???",
+                                               name: thisResult.get("name")!.stringValue ?? "???",
+                                               phone: thisResult.get("phone")!.stringValue ?? "???",
+                                               address: thisResult.get("address")!.stringValue ?? "???",
+                                               door: thisResult.get("door")!.stringValue ?? "???")
+                    self.address.addressList.append(addThis)
+                    self.address.saveData()
                 }
             case .failure(let error):
                 print(error)

@@ -63,11 +63,13 @@ class UserNameTableViewController: UITableViewController {
                     newUser.username = LCString(self.getNewPhoneNumberTextField.text!)
                     newUser.password = LCString(self.getNewPhoneNumberTextField.text!)
                     //MARK: 登录后用户操作
-                    newUser.signUp()
+                    newUser.signUp({ (_) in
+                        print("yes")
+                    })
                     print("绑定失败：",error)
                     activityIndicator.removeFromSuperview()
                     
-                    //MARK: 登录失败则不进行界面跳转（由于LeanCode问题，很容易登录超时失败）
+                    //MARK: 登录失败则不进行界面跳转
                     let alertController = UIAlertController(title: "系统提示",
                                                             message: "请您重新绑定",
                                                             preferredStyle: .alert)

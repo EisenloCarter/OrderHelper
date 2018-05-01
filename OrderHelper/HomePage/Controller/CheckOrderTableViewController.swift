@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LeanCloud
 
 class CheckOrderTableViewController: UITableViewController {
     
@@ -170,21 +171,52 @@ class CheckOrderTableViewController: UITableViewController {
 
 extension CheckOrderTableViewController{
     @objc func btnClick(sender:UIButton){
-        if let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory") {
-            
-            let date = Date()
-            let time = DateFormatter()
-            time.dateFormat = "yyyy-MM-dd HH:mm"
-            let timeStr = time.string(from: date) as String
+        if address.addressList.isEmpty {
+            let alertController = UIAlertController(title: "系统提示",
+                                                    message: "收货地址不能为空",
+                                                    preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                action in
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else{
+            if let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory") {
+                let date = Date()
+                let time = DateFormatter()
+                time.dateFormat = "yyyy-MM-dd HH:mm"
+                let timeStr = time.string(from: date) as String
+                
+                order.loadData()
+                order.orderList.insert(OrderInfo(user: UserDefaults.standard.string(forKey: "UserName") ?? "???",
+                                                 shopName: finalShop.name,
+                                                 shopImage: finalShop.shopLogo,
+                                                 time: timeStr,
+                                                 price: "￥" + TotalPrice), at: 0)
+                order.saveData()
 
-            order.loadData()
-            order.orderList.insert(OrderInfo(shopName: finalShop.name, shopImage: finalShop.shopLogo, time: timeStr, price: "￥" + TotalPrice), at: 0)
-            order.saveData()
-            
-            let vc = testVC as! UITabBarController
-            vc.selectedIndex = 2
-            vc.modalTransitionStyle = .coverVertical // 选择过渡效果
-            self.present(vc, animated: true, completion: nil)
+                let newOrder = LCObject(className: "OrderInfo")
+                newOrder.set("user", value: UserDefaults.standard.string(forKey: "UserName") ?? "???")
+                newOrder.set("shopName", value: finalShop.name)
+                newOrder.set("shopImage", value: finalShop.shopLogo)
+                newOrder.set("time", value: timeStr)
+                newOrder.set("price", value: TotalPrice)
+                newOrder.save(){ result in
+                    switch result {
+                    case .success:
+                        print("订单保存成功！")
+                        break
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+
+                let vc = testVC as! UITabBarController
+                vc.selectedIndex = 2
+                vc.modalTransitionStyle = .coverVertical // 选择过渡效果
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
 }

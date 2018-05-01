@@ -9,27 +9,26 @@
 import UIKit
 
 class AccountTableViewController: UITableViewController {
-    
     @IBOutlet weak var avatarImage: UIImageView!{
         didSet{
             avatarImage.roundImage()
         }
     }
-    
-    @IBOutlet weak var loginLabel: UILabel!{
-        didSet{
-            if(LoginHelper.sharedInstance.isLogin()){
-                loginLabel.isHidden = true
-            }
-            else{
-                loginLabel.isHidden = false
-            }
-        }
-    }
+    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if (UserDefaults.standard.string(forKey: "UserName") != nil) {
+            loginLabel.isHidden = true
+            loginBtn.isHidden = true
+        }
+        else{
+            loginLabel.isHidden = false
+            loginBtn.isHidden = false
+        }
+        
         // MARK: 去除导航栏分割线
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

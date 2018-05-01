@@ -8,13 +8,15 @@
 import UIKit
 
 class AddressInfo: NSObject, NSCoding {
+    var user:String
     var name:String
     var phone:String
     var address:String
     var door:String
     
     //构造方法
-    required init(name:String = "", phone:String = "", address:String = "", door:String = "") {
+    required init(user:String = "", name:String = "", phone:String = "", address:String = "", door:String = "") {
+        self.user = user
         self.name = name
         self.phone = phone
         self.address = address
@@ -23,6 +25,7 @@ class AddressInfo: NSObject, NSCoding {
     
     //从object解析回来
     required init(coder decoder: NSCoder) {
+        self.user = decoder.decodeObject(forKey: "User") as? String ?? ""
         self.name = decoder.decodeObject(forKey: "Name") as? String ?? ""
         self.phone = decoder.decodeObject(forKey: "Phone") as? String ?? ""
         self.address = decoder.decodeObject(forKey: "Address") as? String ?? ""
@@ -31,6 +34,7 @@ class AddressInfo: NSObject, NSCoding {
     
     //编码成object
     func encode(with coder: NSCoder) {
+        coder.encode(user, forKey:"User")
         coder.encode(name, forKey:"Name")
         coder.encode(phone, forKey:"Phone")
         coder.encode(address, forKey:"Address")

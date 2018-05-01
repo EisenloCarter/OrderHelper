@@ -9,8 +9,24 @@
 import UIKit
 
 class SettingTableViewController: UITableViewController{
+    var order = Order()
+    var address = Address()
+    
     @IBAction func logOutButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        UserDefaults.standard.removeObject(forKey: "UserName")
+        UserDefaults.standard.synchronize()
+        
+        order.orderList.removeAll()
+        order.saveData()
+        
+        address.addressList.removeAll()
+        address.saveData()
+        
+        let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory")
+        let vc = testVC as! UITabBarController
+        vc.selectedIndex = 3
+        vc.modalTransitionStyle = .coverVertical // 选择过渡效果
+        self.present(vc, animated: true, completion: nil)
     }
     
     // MARK: 各个cell的触发事件

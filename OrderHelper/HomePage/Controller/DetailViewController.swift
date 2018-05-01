@@ -29,9 +29,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     var TotalPrice = ""
     
     override func viewWillAppear(_ animated: Bool) {
-//        onCreateData()
         food.loadData()
-        print("测试位置:food.foodList.count",food.foodList.count)
         foodsTableView.reloadData()
     }
     
@@ -43,30 +41,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         nv.title = tmpShop.name
         nv.largeTitleDisplayMode = .automatic
     }
-    
-//    func onCreateData(){
-//        let query = LCQuery(className: "FoodInfo")
-//        query.whereKey("shopName", .equalTo(tmpShop.name))
-//        query.find { result in
-//            switch result {
-//            case .success(let objects):
-//                for resultFood in objects{
-//
-//                    print("测试位置1",resultFood.get("name")!.stringValue ?? "???")
-//
-//                    let addThisFood = FoodInfo(  shopName: resultFood.get("shopName")!.stringValue ?? "???",
-//                                                name: resultFood.get("name")!.stringValue ?? "???",
-//                                                image: resultFood.get("image")!.stringValue ?? "???",
-//                                                price: resultFood.get("price")!.stringValue ?? "???")
-//                    self.food.foodList.append(addThisFood)
-//                    self.food.saveData()
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//        food.loadData()
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tmpShop.foodNumber
@@ -110,6 +84,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
                 self.btnHaveTheBill.alpha = 0.4
             }
             else{
+                //判断是否登录
+                if (UserDefaults.standard.string(forKey: "UserName") == nil){
+                    let alertController = UIAlertController(title: "系统提示",
+                                                            message: "请您登陆后再下单",
+                                                            preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                        action in
+                    })
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
                 self.btnHaveTheBill.isUserInteractionEnabled = true
                 self.btnHaveTheBill.alpha = 1
             }
