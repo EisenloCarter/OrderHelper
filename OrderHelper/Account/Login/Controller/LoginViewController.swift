@@ -63,9 +63,13 @@ class LoginViewController: UITableViewController {
                     
                     let testVC = self.storyboard?.instantiateViewController(withIdentifier: "mainStory")
                     let vc = testVC as! UITabBarController
+                    
                     vc.selectedIndex = 3
                     vc.modalTransitionStyle = .coverVertical // 选择过渡效果
                     self.present(vc, animated: true, completion: nil)
+                    
+                    let anvc = OrderTableViewController()
+                    anvc.tableView.reloadData()
                     
                     activityIndicator.removeFromSuperview()
                     break
@@ -74,7 +78,7 @@ class LoginViewController: UITableViewController {
                     newUser.username = LCString(self.phoneNumTextField.text!)
                     newUser.password = LCString(self.phoneNumTextField.text!)
                     newUser.signUp({ (_) in
-                        print("yes")
+                        print("Success")
                     })
                     
                     print("登录失败：",error)

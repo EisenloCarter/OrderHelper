@@ -13,7 +13,7 @@ class AddressTableViewController: UITableViewController {
     var address = Address()
 
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        self.tableView.reloadData()
         address.loadData()
     }
     

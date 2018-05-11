@@ -12,9 +12,15 @@ class OrderTableViewController: UITableViewController {
 
     var order = Order()
     
+    override func viewWillAppear(_ animated: Bool) {
+        order.loadData()
+        self.tableView.reloadData()
+
+        print("进入")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        order.loadData()
+        
         self.tableView.tableFooterView = UIView(frame:CGRect.zero)
     }
 
